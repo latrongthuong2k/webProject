@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <h2>Create Account</h2>
+    <form action="/login.html" method="post">
+        <fieldset>
+            <legend>Registration Information</legend>
+            <label><b>First name:</b></label>
+            <input type="text" name="firstname">
+            <label><b>Last name:</b></label>
+            <input type="text" name="lastname">
+            <br>
+            <label><b>Email*:</b></label>
+            <input type="text" name="email">
+            <label><b>Phone*:</b></label>
+            <input type="text" name="phone">
+            <br>
+            <label><b>Password*:</b></label>
+            <input type="text" name="password">
+            <label><b>Confirm Password*:</b></label>
+            <input type="text" name="confirm password"><br>
+
+        </fieldset>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label><b>Gender:</b></label>
+            <input type="radio" name="gender" value="male">
+            <input type="radio" name="gender" value="female">
+            <label><b>Hobbies:</b></label>
+            <input type="checkbox" name="music"><label>Music</label>
+            <input type="checkbox" name="sport"><label>Sport</label>
+            <input type="checkbox" name="travel"><label>Travel</label>
+            <input type="checkbox" name="movies"><label>Movies</label><br>
+            <label><b>Source of Income</b></label>
+            <select>
+                <option value="employee">Employee</option>
+                <option value="employee2">Employee2</option>
+                <option value="employee3">Employee3</option>
+            </select>
+            <label><b>Income</b></label>
+            <input type="range" name="salary" min="10000" max="50000"><br>
+            <label><b>Age</b></label>
+            <input type="number" name="number" min="20" max="30">
+            <label><b>Profile Picture</b></label>
+            <input type="file"><br>
+            <label><b>Birthday</b></label>
+            <input type="date" name="" id="">
+            <label><b>Address</b></label>
+            <input type="text" name="" id=""><br>
+            <label for=""><b>Bio</b></label>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+        </fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+
+</html>
