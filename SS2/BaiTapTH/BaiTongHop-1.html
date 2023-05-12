@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTongHop</title>
+</head>
+
+<body>
+    <h2>Bai 1</h2>
+    <form action="BaiTongHop.html" method="get">
+        <fieldset>
+            <legend>Thông tin sản phẩm</legend>
+            <label for="">Tên sản phẩm</label>
+            <input type="text" name="tên sản phẩm" id="">
+            <label for="">Số lượng</label>
+            <input type="number">
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label for="">Họ và tên:</label>
+            <input type="text" name="họ và tên" id="">
+            <label for="">Email:</label>
+            <input type="email">
+            <label for="">Số diện thoại:</label>
+            <input type="number" minlength="10" maxlength="10">
+            <label for="">Địa chỉ:</label>
+            <input type="text">
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin thanh toán</legend>
+            <label for="">Phương thức thanh toán:</label>
+            <select name="payment method" id="paymentMethod">
+                <option value="">Thanh toán khi nhận hàng</option>
+                <option value="">Credit Card</option>
+                <option value="">Debit Card</option>
+                <option value="">Bank transfer</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="Đặt hàng">
+    </form>
+</body>
+
+</html>
