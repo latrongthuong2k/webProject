@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT</title>
+</head>
+
+<body>
+    <header>
+        <h1>Trang web thương mại điện tử</h1>
+        <nav>
+            <a href="">Trang chủ</a>
+            <a href="">Sản phẩm</a>
+            <a href="">Giỏ hàng</a>
+            <a href="">Liên hệ</a>
+        </nav>
+    </header>
+    <article>
+        <section class="productInfo">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Mô tả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><img src="./ImageBT5/Quả táo.jpeg" alt="Quả táo"></td>
+                        <td><a href="">Sản phẩm 1</a></td>
+                        <td rowspan="3">100,000đ</td>
+                        <td rowspan="3">Mô tả sản phẩm</td>
+                    </tr>
+                    <tr>
+                        <td>Size : M</td>
+                    </tr>
+                    <tr>
+                        <td>Color: N</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./ImageBT5/Macbook.webp" alt="Laptop"></td>
+                        <td><a href="">Sản phẩm 2</a></td>
+                        <td>200,000đ</td>
+                        <td>Mô tả sản phẩm 2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="./ImageBT5/Iphone.jpeg" alt="Iphone"></td>
+                        <td>Mô tả sản phẩm 3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Liên hệ</h2>
+            <form action="#" method="post">
+                <label for="">Họ và tên:</label><input type="text" name="hovaten" id=""><br>
+                <label for="">Email:</label><input type="email" name="Email" id=""><br>
+                <label for="">Nội dung:</label><textarea name="" id="" cols="20" rows="10"></textarea><br>
+                <input type="button" value="Gửi">
+            </form>
+            <h2>Thanh toán</h2>
+            <form action="" method="post">
+                <label for="">Họ và tên:</label><input type="text" name="hovaten" id=""><br>
+                <label for="">Email:</label><input type="email" name="Email" id=""><br>
+                <label for="">Số thẻ:</label><input type="number"><br>
+                <label for="">Ngày hết hạn:</label><input type="date" name="" id=""><br>
+                <input type="button" value="Gửi">
+            </form>
+        </section>
+    </article>
+    <footer>
+        <p>© 2023 Trang web thương mại điện tử</p>
+    </footer>
+</body>
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .productInfo {
+        margin-top: 50px;
+    }
+</style>
+
+</html>

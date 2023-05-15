@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD01-S03-THTH</title>
+</head>
+
+<body>
+    <article>
+        <section id="BT1">
+            <h2>Bài 1</h2>
+            <h3>Đăng ký mua xe ô tô</h3>
+            <form action="#" method="post">
+                <!-- Thông tin khách hàng -->
+                <label for="">Họ và tên:</label>
+                <input type="text" name="ho va ten" id="" placeholder="Tên của bạn"><br>
+                <label for="">Email:</label>
+                <input type="email" name="Email" id="" placeholder="Email của bạn"><br>
+                <label for="">Số điện thoại:</label>
+                <input type="number" name="Số điện thoại" id="" placeholder="Số điện thoại của bạn"><br>
+                <label for="">Xe ô tô muốn mua:</label>
+                </select><br>
+                <input list="carList" id="carLists" name="carList" placeholder="Mẫu xe">
+                <datalist id="carList">
+                    <option value="Mẫu 1"></option>
+                    <option value="Mẫu 2"></option>
+                    <option value="Mẫu 3"></option>
+                </datalist><br>
+
+                <label for="">Lời nhắn:</label><br>
+                <textarea name="" id="loiNhan" cols="30" rows="10"></textarea><br>
+                <!-- Check option cho mẫu xe -->
+                <label for="">Màu xe:</label>
+                <select name="" id="">
+                    <option value="">Đỏ</option>
+                    <option value="">Đen</option>
+                    <option value="">Vàng</option>
+                </select>
+                <fieldset>
+                    <!-- Phương thức thanh toán -->
+                    <legend>Phương thức thanh toán</legend>
+                    <input type="radio"><label for="">Thẻ tín dụng</label>
+                    <input type="radio"><label for="">Chuyển khoảng ngân hàng</label>
+                </fieldset>
+                <!-- Check các điều khoảng -->
+                <label for="">Tôi đồng ý với các điều khoảng:</label>
+                <input type="checkbox" name="check" id="DK"><br>
+                <input type="submit" value="Gửi">
+            </form>
+        </section>
+        <section id="BT2">
+            <h2>Bài 2</h2>
+            <h3>Thống kê ngành Công nghệ thông tin</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Ngành</th>
+                        <th>Số lượng sinh viên</th>
+                        <th colspan="2">Giới tính</th>
+                        <th>Thu nhập trung bình (triệu VNĐ)</th>
+                        <th>Độ khó dễ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kỹ Thuật phần mềm</td>
+                        <td>150</td>
+                        <td>Nam:50%</td>
+                        <td>Nữ:50%</td>
+                        <td>15</td>
+                        <td>Dễ</td>
+                    </tr>
+                    <tr>
+                        <td>Hệ thống thông tin</td>
+                        <td>100</td>
+                        <td>Nam:40%</td>
+                        <td>Nữ:60%</td>
+                        <td>12</td>
+                        <td>Trung bình</td>
+                    </tr>
+                    <tr>
+                        <td>Mạng máy tính</td>
+                        <td>80</td>
+                        <td>Nam:60%</td>
+                        <td>Nữ:40%</td>
+                        <td>18</td>
+                        <td>Khó</td>
+                    </tr>
+                    <tr>
+                        <td>Trí tuệ nhân tạo</td>
+                        <td>70</td>
+                        <td>Nam:70%</td>
+                        <td>Nữ:40%</td>
+                        <td>20</td>
+                        <td>Rất khó</td>
+                    </tr>
+                    <tr>
+                        <td>An toàn thông tin</td>
+                        <td>50</td>
+                        <td>Nam:35%</td>
+                        <td>Nữ:65%</td>
+                        <td>16</td>
+                        <td>Trung bình</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Đăng ký nguyện vọng chuyên ngành</h3>
+            <form action="#" method="post">
+                <label for="">Họ và tên:</label>
+                <input type="text" name="hovaten" id="nameInput"><br>
+                <label for="">Email:</label>
+                <input type="email" name="Email" id="emailInput"><br>
+                <label for="">Giới tính:</label>
+                <select name="gender" id="">
+                    <option value="">Nam</option>
+                    <option value="">Nữ</option>
+                    <option value="">Khác</option>
+                </select><br>
+                <label for="">Nguyện vọng chuyên ngành:</label>
+                <select name="Nguyện vọng" id="">
+                    <option value="">Kỹ thuật phần mềm</option>
+                    <option value="">Trí tuệ nhân tạo</option>
+                    <option value="">Hệ thống thông tin</option>
+                    <option value="">Mạng máy tính</option>
+                    <option value="">An toàn thông tin</option>
+                </select><br>
+                <input type="submit" value="Đăng ký">
+            </form>
+        </section>
+        <section id="BT3">
+            <h2>Bài 3</h2>
+            <h3>Trang nghe nhạc</h3>
+            <fieldset>
+                <legend>List nhạc</legend>
+                <form action="#" method="get">
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><audio src="" controls></audio>
+                                    <p>Bài hát: Tên Bài Hát tương ứng</p>
+                                    <p>Nghệ sĩ: Tên Nghệ sĩ tương ứng</p>
+                                </td>
+                                <td><audio src="" controls></audio>
+                                    <p>Bài hát: Tên Bài Hát tương ứng</p>
+                                    <p>Nghệ sĩ: Tên Nghệ sĩ tương ứng</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><audio src="" controls></audio>
+                                    <p>Bài hát: Tên Bài Hát tương ứng</p>
+                                    <p>Nghệ sĩ: Tên Nghệ sĩ tương ứng</p>
+                                </td>
+                                <td><audio src="" controls></audio>
+                                    <p>Bài hát: Tên Bài Hát tương ứng</p>
+                                    <p>Nghệ sĩ: Tên Nghệ sĩ tương ứng</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <fieldset>
+                        <legend>Hãy tìm tên bài hát ưa thích tại đây</legend>
+                        <label for="">Tìm kiếm:</label><input type="text"><br>
+                        <input type="submit" value="Tìm">
+                    </fieldset>
+                </form>
+            </fieldset>
+        </section>
+        <section id="BT4">
+            <h2>Bài 4</h2>
+            <h3>Trang xem phim</h3>
+            <form action="#" method="get">
+                <fieldset>
+                    <Legend>List phim</Legend>
+                    <table>
+                        <tr>
+                            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/MVPTGNGiI-4"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div style="text-align: center;">
+                                    <p><b>Synthwave radio</b></p>
+                                    <p>Đạo diễn</p>
+                                </div>
+
+                            </td>
+                            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/MVPTGNGiI-4"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div style="text-align: center;">
+                                    <p><b>Synthwave radio</b></p>
+                                    <p>Đạo diễn</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/MVPTGNGiI-4"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div style="text-align: center;">
+                                    <p><b>Synthwave radio</b></p>
+                                    <p>Đạo diễn</p>
+                                </div>
+                            </td>
+                            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/MVPTGNGiI-4"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div style="text-align: center;">
+                                    <p><b>Synthwave radio</b></p>
+                                    <p>Đạo diễn</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <label for="">Tìm kiếm</label>
+                    <input type="text" name="" id="">
+                    <input type="submit" value="Tìm">
+                </fieldset>
+            </form>
+        </section>
+    </article>
+</body>
+<style>
+
+</style>
+
+</html>
