@@ -10,9 +10,9 @@
 
 <body>
     <form action="BT4-AlphabetTable.html" method="get" onsubmit="return updateTable()">
-        <label for="">Name:</label>
-        <input type="text" name="name" id="nameInput">
-        <input type="submit" value="Submit">
+        <label for="nameInput">Nhập Tên:</label>
+        <input type="text" name="name" id="nameInput" placeholder="Nhập tên không dấu">
+        <input type="submit" value="In chữ">
     </form>
 
     <table border="1">
@@ -72,7 +72,7 @@
         for (var i = 0; i < nameLetters.length; i++) {
             var letter = nameLetters[i];
             var element = document.getElementById(letter);
-            element.innerHTML = letter;
+            element.innerHTML = + letter;
         }
         return false;
     }

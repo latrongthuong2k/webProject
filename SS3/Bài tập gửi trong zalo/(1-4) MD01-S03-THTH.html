@@ -15,12 +15,12 @@
             <h3>Đăng ký mua xe ô tô</h3>
             <form action="#" method="post">
                 <!-- Thông tin khách hàng -->
-                <label for="">Họ và tên:</label>
-                <input type="text" name="ho va ten" id="" placeholder="Tên của bạn"><br>
-                <label for="">Email:</label>
-                <input type="email" name="Email" id="" placeholder="Email của bạn"><br>
-                <label for="">Số điện thoại:</label>
-                <input type="number" name="Số điện thoại" id="" placeholder="Số điện thoại của bạn"><br>
+                <label for="info">Họ và tên:</label>
+                <input type="text" name="ho va ten" id="info" placeholder="Tên của bạn"><br>
+                <label for="e_info">Email:</label>
+                <input type="email" name="Email" id="e_info" placeholder="Email của bạn"><br>
+                <label for="n_info">Số điện thoại:</label>
+                <input type="number" name="Số điện thoại" id="n_info" placeholder="Số điện thoại của bạn"><br>
                 <label for="">Xe ô tô muốn mua:</label>
                 </select><br>
                 <input list="carList" id="carLists" name="carList" placeholder="Mẫu xe">
@@ -109,18 +109,18 @@
             </table>
             <h3>Đăng ký nguyện vọng chuyên ngành</h3>
             <form action="#" method="post">
-                <label for="">Họ và tên:</label>
+                <label for="nameInput">Họ và tên:</label>
                 <input type="text" name="hovaten" id="nameInput"><br>
-                <label for="">Email:</label>
+                <label for="emailInput">Email:</label>
                 <input type="email" name="Email" id="emailInput"><br>
-                <label for="">Giới tính:</label>
-                <select name="gender" id="">
+                <label for="Gender">Giới tính:</label>
+                <select name="gender" id="Gender">
                     <option value="">Nam</option>
                     <option value="">Nữ</option>
                     <option value="">Khác</option>
                 </select><br>
-                <label for="">Nguyện vọng chuyên ngành:</label>
-                <select name="Nguyện vọng" id="">
+                <label for="aspirations">Nguyện vọng chuyên ngành:</label>
+                <select name="Nguyện vọng" id="aspirations">
                     <option value="">Kỹ thuật phần mềm</option>
                     <option value="">Trí tuệ nhân tạo</option>
                     <option value="">Hệ thống thông tin</option>
@@ -162,7 +162,7 @@
                     </table>
                     <fieldset>
                         <legend>Hãy tìm tên bài hát ưa thích tại đây</legend>
-                        <label for="">Tìm kiếm:</label><input type="text"><br>
+                        <label for="search">Tìm kiếm:</label><input type="text" id="search"><br>
                         <input type="submit" value="Tìm">
                     </fieldset>
                 </form>
@@ -217,8 +217,8 @@
                             </td>
                         </tr>
                     </table>
-                    <label for="">Tìm kiếm</label>
-                    <input type="text" name="" id="">
+                    <label for="search">Tìm kiếm</label>
+                    <input type="text" name="" id="search">
                     <input type="submit" value="Tìm">
                 </fieldset>
             </form>
