@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    width: 900px;
+    height: 800px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.line {
+    /* margin: 20px 0; */
+    width: 50px;
+    height: 3px;
+    background-color: bisque;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.A * {
+    margin-bottom: 20px;
+}
+
+.A div {
+    display: flex;
+    flex-direction: row;
+    color: grey;
+}
+
+.A i {
+    margin-right: 15px;
+}
+
+/* ----------------------- */
+.B {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.B h4 {
+    text-transform: capitalize;
+}
+
+.B input[type="text"],
+input[type="email"],
+textarea,
+h4 {
+    border: 0.5;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.B input[type="submit"] {
+    color: white;
+    padding: 10px 25px;
+    background-color: rgb(0, 193, 129);
+    border-radius: 2px;
+    border: none;
+}
