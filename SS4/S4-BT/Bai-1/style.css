@@ -1,0 +1,55 @@
+:root {
+    --color1: rgb(97, 94, 185);
+    --color2: rgb(173, 173, 173);
+    --color3: rgb(72, 72, 72);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+span.a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--color1);
+    color: var(--color2);
+    margin-top: 30px;
+}
+
+h1 {
+    font-weight: 500;
+    color: var(--color3);
+    margin: 20px;
+}
+
+h1>b {
+    color: rgb(0, 145, 255);
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+div>p {
+    color: grey;
+    margin: 10px;
+}
+
+div>button {
+    margin-top: 20px;
+    padding: 15px 25px;
+    color: var(--color2);
+    background-color: black;
+    border: none;
+    border-radius: 3px;
+}

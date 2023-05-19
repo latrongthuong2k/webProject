@@ -1,0 +1,29 @@
+/* Định dạng phần tử menu */
+#menu {
+    width: 200px;
+    height: 100%;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+#menu a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+
+#menu a.active {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+
+/* Định dạng phần tử nội dung */
+#main {
+    margin-left: 200px;
+    padding: 20px;
+}
