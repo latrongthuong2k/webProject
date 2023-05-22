@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px auto;
+}
+
+h3 {
+    padding: 30px 0;
+    font-weight: 400;
+}
+
+.container {
+    --TextColor: rgb(237, 235, 235);
+    background-color: rgb(50, 92, 105);
+    color: var(--TextColor);
+    width: auto;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    border-bottom: 10px solid rgb(77, 115, 122);
+}
+
+.container div {
+    width: 400px;
+}
+
+.container2 li {
+    margin-left: 50px;
+}
+
+.container2 li>a {
+    text-decoration: none;
+    color: var(--TextColor);
+}
+
+.box {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.box div {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.box div:nth-child(1) {
+    background-color: rgb(53, 151, 216);
+}
+
+.box div:nth-child(2) {
+    background-color: rgb(236, 72, 59);
+}
+
+.box div:nth-child(3) {
+    background-color: rgb(44, 61, 84);
+}
+
+.box div:nth-child(4) {
+    background-color: rgb(49, 153, 216);
+}

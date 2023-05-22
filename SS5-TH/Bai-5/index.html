@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="#" method="get" class="form-container">
+        <div class="columns-container">
+            <div class="column">
+                <input type="text" name="Name" id="Name" placeholder="First Name"><br>
+                <input type="email" name="yourEmail" id="yourEmail" placeholder="Your Email"><br>
+                <input list="country" placeholder="Select Country">
+                <datalist name="country" id="country">
+                    <option value="Viet Nam"></option>
+                    <option value="American"></option>
+                    <option value="Japan"></option>
+                </datalist>
+            </div>
+            <div class="column">
+                <input type="text" name="Name" id="Name" placeholder="Last Name"><br>
+                <input type="number" name="yourPhone" id="yourPhone" placeholder="Your Phone"><br>
+                <input list="course" placeholder="Select Course">
+                <datalist name="course" id="course">
+                    <option value="Back-End"></option>
+                    <option value="Front-End"></option>
+                    <option value="Fullstack"></option>
+                </datalist>
+            </div>
+        </div>
+        <textarea name="content" id="" cols="30" rows="10" placeholder="Content"></textarea><br>
+        <input class=" submitButton" type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

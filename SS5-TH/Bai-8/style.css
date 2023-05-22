@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px auto;
+
+}
+
+.container {
+    background-color: rgb(41, 41, 41);
+    --TextColor: rgb(177, 177, 177);
+    color: var(--TextColor);
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container div {
+    width: 330px;
+    margin: 60px 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted #70707063;
+    height: 1px;
+}
+
+.A span {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(134, 150, 203);
+    margin-bottom: 60px;
+    color: white;
+}
+
+.A p {
+    line-height: 2;
+}
+
+.B a {
+    text-decoration: none;
+    color: var(--TextColor);
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.Title {
+    color: white;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.C a {
+    text-decoration: none;
+    color: var(--TextColor);
+    display: inline-block;
+    padding: 20px 0;
+}
+
+
+
+.D p {
+    color: var(--TextColor);
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.D p>span {
+    display: inline-block;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.D p>span:last-child {
+    height: 10px;
+    width: 1px;
+    background-color: #70707063;
+    border-radius: 10px;
+
+}
