@@ -44,15 +44,19 @@ nav {
     text-align: start;
 }
 
+
+
+.naVi .item:hover a:visited,
+.naVi .item:hover {
+    color: plum;
+    background-color: rgba(221, 160, 221, 0.277);
+}
+
 .naVi a {
     text-decoration: none;
     color: rgb(69, 69, 69);
 }
 
-.naVi .item:hover {
-    color: plum;
-    background-color: rgba(221, 160, 221, 0.423);
-}
 
 .naVi .item {
     height: 50px;
