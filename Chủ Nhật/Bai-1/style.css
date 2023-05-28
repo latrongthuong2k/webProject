@@ -10,6 +10,7 @@ body {
 
 h2 {
     color: rgb(144, 144, 144);
+    margin: 50px 0;
 }
 
 img {
@@ -23,11 +24,15 @@ nav {
     color: grey;
     width: 400px;
     height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .avatar div {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .naVi {
