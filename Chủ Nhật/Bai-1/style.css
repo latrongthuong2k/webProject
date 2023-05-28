@@ -19,7 +19,9 @@ h2 {
 }
 
 nav {
-    border: 1px solid rgba(0, 0, 0, 0.368);
+    /* border: 1px solid rgba(0, 0, 0, 0.368); */
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     background-color: white;
     text-align: center;
     color: grey;
@@ -37,11 +39,9 @@ nav {
 
 .naVi {
     margin-top: 20px;
-    margin-left: 15px;
     display: flex;
     flex-direction: column;
     text-align: start;
-    gap: 25px;
 }
 
 .naVi a {
@@ -49,24 +49,23 @@ nav {
     color: rgb(69, 69, 69);
 }
 
-
-.navi-Detail {
-    display: flex;
-
+.naVi .item:hover {
+    color: plum;
+    background-color: rgba(221, 160, 221, 0.423);
 }
 
-.navi-Detail .A {
+.naVi .item {
+    height: 50px;
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
+}
+
+.naVi .item div {
     width: 16px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
-
-.naVi a {
-    padding-left: 10px;
-
-}
-
 
 /* ///////////////// */
 .content {
