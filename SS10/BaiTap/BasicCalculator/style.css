@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calculator {
+    margin: 100px auto;
+    width: 400px;
+    height: 550px;
+    border: none;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    column-gap: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(149, 149, 149);
+    border: 1px solid gray;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgb(207, 207, 207);
+}
+
+.calculateView {
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid rgb(132, 132, 132);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
+    background-color: rgb(255, 255, 233);
+    color: rgb(49, 49, 49);
+    font-size: 50px;
+    grid-column: 1/5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.calculateView {
+    padding-right: 15px;
+}
+
+.operation {
+    background-color: rgb(214, 139, 0);
+}
+
+.operation:hover {
+    background-color: rgb(255, 214, 139);
+}
+
+.Plus,
+.Minus,
+.Multiply,
+.Division {
+    grid-column: 4/5;
+}
+
+.Plus {
+    grid-row: 2/3;
+}
+
+.Minus {
+    grid-row: 3/4;
+}
+
+.Multiply {
+    grid-row: 4/5;
+}
+
+.Division {
+    grid-row: 5/6;
+}
+
+.Equal {
+    grid-column: 1/2;
+}
+
+.zero {
+    grid-row: 5/6;
+    grid-column: 2/3;
+}
