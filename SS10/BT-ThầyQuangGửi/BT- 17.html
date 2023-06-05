@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 17.Nhập vào 3 số từ bàn phím, sắp xếp theo thứ tự giảm dần và in ra
+    let num1 = parseFloat(prompt("Nhập số thứ nhất:"));
+    let num2 = parseFloat(prompt("Nhập số thứ hai:"));
+    let num3 = parseFloat(prompt("Nhập số thứ ba:"));
+
+    let sortedNumbers = [num1, num2, num3].sort((a, b) => b - a);
+
+    console.log("Các số theo thứ tự giảm dần là: " + sortedNumbers.join(", "));
+/*
+      biểu thức a - b được sử dụng để so sánh hai số a và b trong quá trình sắp xếp mảng sortedNumbers theo thứ tự giảm dần.
+      Khi sử dụng một hàm so sánh trong phương thức sort() của một mảng, hai phần tử sẽ được so sánh với nhau để xác định thứ tự của chúng trong mảng kết quả.
+      Trong trường hợp này, khi  sử dụng b - a làm hàm so sánh, nếu b lớn hơn a, kết quả của phép trừ b - a sẽ là một số dương. 
+      Điều này đồng nghĩa với việc b phải đứng trước a trong mảng kết quả. Ngược lại, nếu a lớn hơn b, kết quả của phép trừ sẽ là một số âm, đồng nghĩa với việc a sẽ đứng trước b trong mảng kết quả.
+      Do đó, sử dụng b - a trong hàm so sánh giúp mảng được sắp xếp theo thứ tự giảm dần, với số lớn nhất đứng đầu mảng.
+      */
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT5</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function tinhDiemTrungBinh(diemToan, diemLy, diemHoa) {
+        var diemTrungBinh = (diemToan + diemLy + diemHoa) / 3;
+        console.log('Điểm trung bình: ' + diemTrungBinh.toFixed(2));
+        if (diemTrungBinh < 5) {
+            console.log('Xếp loại: Yếu');
+        } else if (diemTrungBinh < 6) {
+            console.log('Xếp loại: Kém');
+        } else if (diemTrungBinh < 7) {
+            console.log('Xếp loại: Trung bình');
+        } else if (diemTrungBinh < 8) {
+            console.log('Xếp loại: Khá');
+        } else if (diemTrungBinh < 9) {
+            console.log('Xếp loại: Giỏi');
+        } else {
+            console.log('Xếp loại: Xuất sắc');
+        }
+    }
+
+    var diemHTML = parseFloat(prompt('Nhập điểm Toan:'));
+    var diemCSS = parseFloat(prompt('Nhập điểm Ly:'));
+    var diemJavascript = parseFloat(prompt('Nhập điểm Hoa:'));
+    tinhDiemTrungBinh(diemHTML, diemCSS, diemJavascript);
+
+</script>
+
+</html>

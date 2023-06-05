@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT21</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 21
+    let fuel = parseFloat(prompt("Nhập số nhiên liệu của tàu con thoi (từ 8000 đến 50000):"));
+    let astronauts = parseInt(prompt("Nhập số phi hành gia (từ 1 đến 7):"));
+
+    if (fuel >= 8000 && fuel <= 50000 && astronauts >= 1 && astronauts <= 7) {
+        let nhienLieuMax = fuel * 50 / (100 * astronauts);
+        let nhienLieuConLai = fuel - (astronauts * 100);
+
+        console.log("Số nhiên liệu còn lại: " + nhienLieuConLai);
+        console.log("Độ cao tối đa tàu con thoi có thể đạt được: " + nhienLieuMax + "km");
+    } else {
+        console.log("Thông tin không hợp lệ.");
+    }
+</script>
+
+</html>

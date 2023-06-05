@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function kiemTraSoNguyenTo(n) {
+        if (n <= 1) {
+            console.log(n + ' không phải là số nguyên tố');
+            return;
+        }
+        for (var i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                console.log(n + ' không phải là số nguyên tố');
+                return;
+            }
+        }
+        console.log(n + ' là số nguyên tố');
+    }
+
+    // Sử dụng:
+    var number = parseInt(prompt('Nhập một số nguyên:'));
+    kiemTraSoNguyenTo(number);
+</script>
+
+</html>

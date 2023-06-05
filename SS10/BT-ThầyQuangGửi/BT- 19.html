@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 19
+    for (let number = 100; number <= 999; number++) {
+        let sum = 0;
+        let temp = number;
+        while (temp > 0) {
+            let digit = temp % 10;
+            sum += Math.pow(digit, 3);
+            temp = Math.floor(temp / 10);
+        }
+        if (sum === number) {
+            console.log(number + " là số Armstrong");
+        }
+    }
+</script>
+
+</html>

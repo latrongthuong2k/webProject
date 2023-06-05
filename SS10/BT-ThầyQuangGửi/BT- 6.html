@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT6</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function kiemTraTamGiac(a, b, c) {
+        if (a === b && b === c) {
+            console.log('Tam giác đều');
+        } else if (a === b || b === c || a === c) {
+            if (a * a + b * b === c * c || a * a + c * c === b * b || b * b + c * c === a * a) {
+                console.log('Tam giác vuông cân');
+            } else {
+                console.log('Tam giác cân');
+            }
+        } else if (a * a + b * b === c * c || a * a + c * c === b * b || b * b + c * c === a * a) {
+            console.log('Tam giác vuông');
+        } else {
+            console.log('Tam giác thường');
+        }
+    }
+    var side1 = parseInt(prompt('Nhập độ dài cạnh thứ nhất:'));
+    var side2 = parseInt(prompt('Nhập độ dài cạnh thứ hai:'));
+    var side3 = parseInt(prompt('Nhập độ dài cạnh thứ ba:'));
+    kiemTraTamGiac(side1, side2, side3);
+
+</script>
+
+</html>

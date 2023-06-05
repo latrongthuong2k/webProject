@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //  16. Nhập vào 3 số từ bàn phím, hiển thị dấu của tích 3 số(dấu + hoặc -)
+    let num1 = parseFloat(prompt("Nhập số thứ nhất:"));
+    let num2 = parseFloat(prompt("Nhập số thứ hai:"));
+    let num3 = parseFloat(prompt("Nhập số thứ ba:"));
+
+    let product = num1 * num2 * num3;
+    let sign = (product >= 0) ? "+" : "-";
+
+    console.log("Dấu của tích 3 số là: " + sign);
+</script>
+
+</html>
