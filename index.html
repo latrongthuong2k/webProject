@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let num = Number(prompt("Nhập số thứ nhất"));
+    let num2 = Number(prompt("Nhập số thứ 2"));
+    let phepTinh = (prompt("Nhập phép tính "));
+    let result = 0;
+
+    switch (phepTinh) {
+        case "x":
+            result = num * num2;
+            break;
+        case "/":
+            result = num / num2;
+            break;
+        case "+":
+            result = num + num2;
+            break;
+        case "-":
+            result = num - num2;
+            break;
+        default:
+    }
+    alert(result);
+</script>
+
+</html>
