@@ -12,14 +12,24 @@
 
 </body>
 <script>
-    function reverseNumber(number) {
-        const reversed = parseInt(number.toString().split('').reverse().join(''));
-        return reversed;
-    }
+    // function reverseNumber(number) {
+    //     const reversed = parseInt(number.toString().split('').reverse().join(''));
+    //     return reversed;
+    // }
 
-    const number = parseInt(prompt('Nhập một số nguyên:'));
-    const reversedNumber = reverseNumber(number);
-    console.log(`Số đảo ngược của ${number} là: ${reversedNumber}`);
+    // const reversedNumber = reverseNumber(number);
+    // console.log(`Số đảo ngược của ${number} là: ${reversedNumber}`);
+
+    let number = parseInt(prompt('Nhập một số nguyên:'));
+    let donvi;
+    let reversedNumbers = 0;
+    while (number !== 0) {
+        donvi = number % 10;
+        number = Math.floor(number / 10);
+        reversedNumbers = reversedNumbers * 10 + donvi;
+    }
+    console.log("Kết quả đảo ngược: " + reversedNumbers);
+
 </script>
 
 </html>

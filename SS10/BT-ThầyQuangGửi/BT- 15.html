@@ -13,8 +13,14 @@
 </body>
 <script>
     function calculateInterest(beginMoney, laiSuat, soThangGui) {
-        const interest = (beginMoney * laiSuat * soThangGui) / 12;
-        const totalAmount = beginMoney + interest;
+        let totalAmount = beginMoney;
+        let interest = 0;
+
+        for (let i = 0; i < soThangGui; i++) {
+            interest += totalAmount * laiSuat;
+            totalAmount += interest;
+        }
+
         return { interest, totalAmount };
     }
 
@@ -22,9 +28,15 @@
     const laiSuat = parseFloat(prompt('Nhập lãi suất năm (%):'));
     const soThangGui = parseInt(prompt('Nhập số tháng gửi:'));
 
-    const { interest, totalAmount } = calculateInterest(beginMoney, laiSuat / 100, soThangGui);
+    const { interest, totalAmount } = calculateInterest(
+        beginMoney,
+        laiSuat / 100 / 12, // Chia lãi suất cho 12 để tính lãi suất hàng tháng
+        soThangGui
+    );
+
     console.log(`Số tiền lãi là: ${interest}`);
     console.log(`Số tiền nhận được sau thời gian gửi là: ${totalAmount}`);
+
 
 </script>
 

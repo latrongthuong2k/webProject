@@ -12,22 +12,34 @@
 
 </body>
 <script>
-    function calculateSumOfPositiveNumbers() {
-        let sum = 0;
-        let number;
+    // function calculateSumOfPositiveNumbers() {
+    //     let sum = 0;
+    //     let number;
 
-        while (true) {
-            number = parseInt(prompt('Nhập một số nguyên dương:'));
-            if (number < 0) {
-                break;
-            }
+    //     while (true) {
+    //         number = parseInt(prompt('Nhập một số nguyên dương:'));
+    //         if (number < 0) {
+    //             break;
+    //         }
+    //         sum += number;
+    //     }
+
+    //     return sum;
+    // }
+
+    // const sum = calculateSumOfPositiveNumbers();
+    // console.log(`Tổng các số nguyên dương là: ${sum}`);
+
+    let sum = 0;
+    do {
+        let number = parseInt(prompt('Nhập một só nguyên dương'));
+        if (number < 0) {
+            break;
+        } else {
             sum += number;
         }
-
-        return sum;
     }
-
-    const sum = calculateSumOfPositiveNumbers();
+    while (true)
     console.log(`Tổng các số nguyên dương là: ${sum}`);
 
 </script>
