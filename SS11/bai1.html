@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // bai 1
+    let arr = [];
+    while (true) {
+        let number = prompt('nhập các số dương');
+        if (number < 0) {
+            break;
+        }
+        else if (number % 2 !== 0) {
+            arr.push(number);
+        }
+    }
+    arr.pop();
+    arr.unshift(1, 2)
+    arr.shift();
+</script>
+
+</html>

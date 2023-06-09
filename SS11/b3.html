@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var musicStyle = ["Jazz", "Blues"];
+    // thêm vào cuối mảng 
+    musicStyle.push("Rock-n-Roll");
+
+    // b. Thay thế phần tử nằm chính giữa mảng bằng "Classics" nếu mảng có tổng số phần tử là lẻ
+    if (musicStyle.length % 2 !== 0) {
+        var middleIndex = Math.floor(musicStyle.length / 2);
+        musicStyle[middleIndex] = "Classics";
+    }
+
+    // c. Xóa phần tử đầu tiên của mảng và hiển thị mảng
+    musicStyle.shift();
+    console.log(musicStyle);
+
+    // d. Thêm phần tử "Rap" và "Reggae" vào đầu mảng và hiển thị
+    musicStyle.unshift("Rap", "Reggae");
+    console.log(musicStyle);
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 4
+    var arr = [];
+
+    // a. nhập các giá trị của mảng
+    var value;
+    do {
+        value = prompt("Nhập giá trị của phần tử (nhấn Cancel để dừng):");
+        if (value !== null && value !== "" && !isNaN(value)) {
+            arr.push(parseInt(value));
+        }
+    } while (value !== null && value !== "");
+
+    // b. Tính tổng các giá trị của mảng, in ra phần tử có giá trị max - min
+    var sum = 0;
+    var min = arr[0];
+    var max = arr[0];
+
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    console.log("Tổng các giá trị của mảng:", sum);
+    console.log("Phần tử có giá trị lớn nhất:", max);
+    console.log("Phần tử có giá trị nhỏ nhất:", min);
+</script>
+
+</html>

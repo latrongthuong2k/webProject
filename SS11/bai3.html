@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Nhập vào mảng 1 chiều gồm 5 phần tử bàn phím.
+    // Sử dụng for..in để in ra các phần tử của mảng
+    // Sử dụng for..of để in ra các phần tử lẻ trong mảng
+    // Sử dung for để in ra các phần tử từ cuối lên đầu
+    let arr = [];
+    for (let i = 0; i < 5; i++) {
+        arr[i] = parseInt(prompt('Nhập vào số cho phần tử ' + (i + 1)) + ':');
+    }
+    for (let key in arr) {
+        console.log(key);
+    }
+    for (let element of arr) {
+        if (element % 2 === 1) {
+            console.log(element);
+        }
+
+    }
+    for (let i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+    }
+</script>
+
+</html>

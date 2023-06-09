@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Khai báo mảng 2 chiều arrInt
+    var arrInt = [];
+
+    // a. Nhập giá trị các phần tử của mảng từ bàn phím
+    var rows = parseInt(prompt("Nhập số hàng của mảng:"));
+    var cols = parseInt(prompt("Nhập số cột của mảng:"));
+    for (var i = 0; i < rows; i++) {
+        arrInt[i] = [];
+        for (var j = 0; j < cols; j++) {
+            var value = parseInt(prompt("Nhập giá trị của phần tử [" + i + "][" + j + "]:"));
+            arrInt[i][j] = value;
+        }
+    }
+    // b. 
+    console.log("Các phần tử của mảng:");
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            console.log(arrInt[i][j]);
+            console.log(arrInt);
+        }
+    }
+    // c. In giá trị các phần tử nằm trên đường biên
+    console.log("Các phần tử nằm trên đường biên:");
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            if (i === 0 || i === rows - 1 || j === 0 || j === cols - 1) {
+                console.log(arrInt[i][j]);
+            }
+        }
+    }
+    // d. In giá trị các phần tử nằm trên đường chéo chính và phụ
+    // chính
+    console.log("Các phần tử nằm trên đường chéo chính:");
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            if (i === j) {
+                console.log(arrInt[i][j]);
+            }
+        }
+    }
+    // phụ
+    console.log("Các phần tử nằm trên đường chéo phụ:");
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            if (i + j === rows - 1) {
+                console.log(arrInt[i][j]);
+            }
+        }
+    }
+    // e. 
+    console.log("Mảng sau khi sắp xếp tăng dần theo dòng:");
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols - 1; j++) {
+            for (var k = j + 1; k < cols; k++) {
+                if (arrInt[i][j] > arrInt[i][k]) {
+                    var temp = arrInt[i][j];
+                    arrInt[i][j] = arrInt[i][k];
+                    arrInt[i][k] = temp;
+                }
+            }
+        }
+        console.log(arrInt[i]);
+    }
+
+</script>
+
+</html>

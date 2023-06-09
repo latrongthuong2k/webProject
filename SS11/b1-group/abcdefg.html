@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap</title>
+</head>
+
+<body>
+    <script>
+
+        // a. Nhập 5 giá trị số nguyên cho mảng từ bàn phím
+        for (var i = 0; i < 5; i++) {
+            var input = parseInt(prompt("Nhập giá trị số nguyên thứ " + (i + 1) + ":"));
+            arrayInt.push(input);
+        }
+
+        // b. Hiển thị giá trị các phần tử của mảng
+        console.log("Các phần tử của mảng:");
+        console.log(arrayInt);
+
+        // c. In các phần tử có giá trị chẵn và tính tổng
+        var evenSum = 0;
+        console.log("Các phần tử có giá trị chẵn:");
+        for (var i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] % 2 === 0) {
+                console.log(arrayInt[i]);
+                evenSum += arrayInt[i];
+            }
+        }
+        console.log("Tổng các phần tử chẵn: " + evenSum);
+
+        // d. In các phần tử có chỉ số lẻ và tính tổng
+        var oddSum = 0;
+        console.log("Các phần tử có chỉ số lẻ:");
+        for (var i = 0; i < arrayInt.length; i++) {
+            if (i % 2 === 1) {
+                console.log(arrayInt[i]);
+                oddSum += arrayInt[i];
+            }
+        }
+        console.log("Tổng các phần tử có chỉ số lẻ: " + oddSum);
+
+        // e. In giá trị các phần tử trong mảng là số nguyên tố
+        console.log("Các phần tử là số nguyên tố:");
+        for (var i = 0; i < arrayInt.length; i++) {
+            var isPrime = true;
+            if (arrayInt[i] <= 1) {
+                isPrime = false;
+            } else {
+                for (var j = 2; j <= Math.sqrt(arrayInt[i]); j++) {
+                    if (arrayInt[i] % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrime) {
+                console.log(arrayInt[i]);
+            }
+        }
+
+        // f. In các phần tử có giá trị là max hoặc min
+        var max = Math.max(...arrayInt);
+        var min = Math.min(...arrayInt);
+        console.log("Các phần tử có giá trị là max hoặc min:");
+        for (var i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] === max || arrayInt[i] === min) {
+                console.log(arrayInt[i]);
+            }
+        }
+
+        // g. Sắp xếp mảng giảm dần và in giá trị các phần tử mảng sau khi sắp xếp
+        console.log("Mảng sau khi sắp xếp giảm dần:");
+        arrayInt.sort(function (a, b) {
+            return b - a;
+        });
+        console.log(arrayInt);
+    </script>
+</body>
+
+</html>

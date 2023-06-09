@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //  bai 2
+
+    // Nhập số dòng và số cột
+    var n = parseInt(prompt("Nhập số dòng:"));
+    var m = parseInt(prompt("Nhập số cột:"));
+
+    // Khởi tạo mảng 2 chiều
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr[i] = [];
+    }
+
+    // Nhập dữ liệu cho mảng
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < m; j++) {
+            arr[i][j] = parseInt(prompt("Nhập giá trị cho phần tử arr[" + i + "][" + j + "]:"));
+        }
+    }
+
+    // Tìm giá trị lớn nhất và nhỏ nhất trong mảng
+    let max = arr[0][0];
+    let min = arr[0][0];
+
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < m; j++) {
+            if (arr[i][j] > max) {
+                max = arr[i][j];
+            }
+
+            if (arr[i][j] < min) {
+                min = arr[i][j];
+            }
+        }
+    }
+
+    // In ra giá trị lớn nhất và nhỏ nhất
+    console.log("Giá trị lớn nhất: " + max);
+    console.log("Giá trị nhỏ nhất: " + min);
+</script>
+
+</html>
