@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let arr1 = [-1, 2, 3, -9];
+    let arr2 = [2, -1, 2, 3, -9];
+    let arr3 = [-2, -1, 1, 2];
+    let arr4 = [100, -9, 2, -3, 5];
+    let arr5 = [1, 2, 3];
+    let arr6 = [-1, 2, 3, -9, 11];
+    let mainArr = [arr1, arr2, arr3, arr4, arr5, arr6];
+
+
+    for (let i = 0; i < mainArr.length; i++) {
+        let maxSum = 0;
+        let Sum = 0;
+        let newArr = [];
+        for (let j = 0; j < mainArr[i].length; j++) {
+
+            Sum += mainArr[i][j];
+            if (Sum > maxSum) {
+                maxSum = Sum;
+
+            }
+            if (Sum < 0) {
+                Sum = 0;
+            } else
+                newArr.push(mainArr[i][j]);
+
+        }
+        console.log(newArr);
+        console.log('Max sum : ' + maxSum)
+    }
+
+
+
+
+
+        // }
+
+    /*Bài tập 1: Tính tổng các số chia hết cho 3 không chia hết cho 5  từ 1 đến n sử dụng vòng lặp while,
+    với n là một số nguyên dương được nhập từ bàn phím.*/
+        // let number = parseInt(prompt("Nhập số n!"));
+        // let sum = 0;
+        // let count = number;
+        // while (count > 0) {
+        //     if (count % 3 === 0 && count !== 0) {
+        //         sum += count;
+        //         console.log(count);
+        //     }
+        //     count--;
+        // }
+        // console.log(sum);
+
+    /* Bài tập 2: In ra bảng cửu chương từ 2 đến 9 sử dụng vòng lặp while.*/
+
+        // let max = 9;
+        // let min = 2;
+        // let result = 0;
+        // let countNumber = min;
+        // while (max >= min) {
+        //     console.log('Bản cửu chương :' + min)
+        //     while (countNumber <= max) {
+        //         result = min * countNumber;
+        //         console.log(min + 'x' + countNumber + '=' + result)
+        //         countNumber++;
+        //     }
+        //     min++;
+        //     countNumber = 2;
+        // }
+        // test case
+        // // BT 2: cách tối ưu không lồng nhiều while :
+        // let max = 9;
+        // let min = 2;
+
+        // let countNumber = 1;
+        // let currentNumber = min;
+
+        // while (currentNumber <= max && countNumber <= 10) {
+        //     if (countNumber === 1) {
+        //         console.log('Bản cửu chương: ' + currentNumber);
+        //     }
+        //     let result = currentNumber * countNumber;
+        //     console.log(currentNumber + 'x' + countNumber + '=' + result);
+        //     countNumber++;
+        //     if (countNumber > 10) {
+        //         countNumber = 1;
+        //         currentNumber++;
+        //     }
+        // }
+
+
+
+
+</script>
+
+</html>
