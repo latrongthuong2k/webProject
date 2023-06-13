@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS HomeWork</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //b1 
+    let myColor = ["Red", "Green", "White", "Black"];
+    console.log(myColor[0] + ', ' + myColor[1] + ', ' + myColor[2] + ', ' + myColor[3]);
+    console.log(myColor[0] + ' + ' + myColor[1] + ' + ' + myColor[2] + ' + ' + myColor[3]);
+    //b2 :
+    let inputNumbers = prompt("B2: Hãy nhập một dãy số nguyên dương");
+    let newString = '';
+    for (let i = 0; i < inputNumbers.length; i++) {
+        if (inputNumbers[i] % 2 == 0) {
+            newString += (i + '-');
+        }
+        else
+            newString += i;
+    }
+    console.log('B2 : ' + newString);
+
+    // b3 : 
+    let inputString = prompt("B3: Hãy nhập một chuỗi có viết hoa chữ đầu ở mỗi chữ");
+    function fixCharInWord(inputString) {
+        return inputString.charAt(0).toLowerCase() + inputString.slice(1).toUpperCase();
+    }
+    console.log(fixCharInWord(inputString));
+
+    // b4: 
+    let inputNumbers2 = prompt("B4: Hãy nhập một dãy số nguyên dương mà mỗi số được phân tách bởi dấu phẩy");
+    let sum = 0;
+    for (let i = 0; i < inputNumbers2.length; i++) {
+        if ([i] != ',') {
+            sum += parseInt([i]);
+        }
+    }
+    console.log('B4 : Tổng là ' + sum);
+
+    let numberString = prompt("B5: Hãy nhập một dãy số nguyên dương mà mỗi số được phân tách bởi dấu phẩy");
+    var numbers = numberString.split(",").map(function (num) {
+        return parseInt(num.trim());
+    });
+
+    var minValue = numbers[0];
+
+    for (var i = 1; i < numbers.length; i++) {
+        if (numbers[i] < minValue) {
+            minValue = numbers[i];
+        }
+    }
+    console.log("Số nhỏ nhất là: " + minValue);
+
+    // B6 
+    var numbers = [10, 20, 30, 40, 50];
+    var userInput = parseInt(prompt("Nhập một số:"));
+    var found = numbers.includes(userInput);
+    var index = numbers.indexOf(userInput);
+
+    if (found) {
+        console.log("Số " + userInput + " được tìm thấy tại chỉ số " + index + " trong mảng.");
+    } else {
+        console.log("Số " + userInput + " không được tìm thấy trong mảng.");
+    }
+</script>
+
+</html>

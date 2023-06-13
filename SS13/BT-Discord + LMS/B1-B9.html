@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // B1 : Viết function in ra câu "Xin chào Rikkei Academy"
+
+    function sayHello() {
+        console.log("Xin chào Rikkei Academy");
+    }
+    sayHello();
+
+    //B2 : Viết function tính bình phương của một số
+
+    function squareNumber(number) {
+        return number * number;
+    }
+    console.log(squareNumber(5));
+
+    // B3 : Viết function tính thế kỷ của một năm nhập vào từ bàn phím
+
+    function calculateCentury(year) {
+        var century = Math.ceil(year / 100);
+        return century;
+        /* Phương thức Math.ceil cho giá trị trả về số nguyên lớn hơn ( kể cả số âm và dương)
+         ví dụ : số ( 8.1 => 9 ) và nếu ( -8.1 => 8 )
+         */
+    }
+
+    var inputYear = prompt("Nhập năm: ");
+    console.log("Thế kỷ: " + calculateCentury(parseInt(inputYear)));
+
+    /* B4 : Cho chuỗi dài hơn 15 ký tự, viết function cắt chuỗi,
+     lấy ra 10 ký tự đầu tiên và thêm vào dấu "..." ở cuối chuỗi */
+
+    function truncateString(str) {
+        if (str.length > 15) {
+            return str.slice(0, 10) + "...";
+        } else {
+            return str;
+        }
+    }
+    var longString = "Xin chào tôi là một lập trình viên";
+    console.log(truncateString(longString));
+
+    // B5 : Viết function chuẩn hóa một từ - chỉ viết hoa chữ cái đầu tiên
+    // Tìm hiểu được thêm hàm charAt, hàm toUpperCase và lowerCase
+    function capitalizeFirstLetter(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+
+    console.log(capitalizeFirstLetter("rIkKEi"));
+
+    // B6 : Viết function trả ra giá trị lớn nhất trong một mảng số
+
+    function findMaxValue(numbers) {
+        var max = numbers[0];
+        for (var i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        return max;
+    }
+    var numberArray = [1, 5, 3, 9, 2];
+    console.log(findMaxValue(numberArray));
+
+    // B7 : Viết function kiểm tra số chẵn-lẻ, nguyên tố, hoàn hảo
+
+    // Bool
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function isPerfect(number) {
+        var sum = 1;
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                sum += i;
+                if (i !== number / i) {
+                    sum += number / i;
+                }
+            }
+        }
+        return sum === number;
+    }
+    // kết quả sẽ là true hoặc false
+
+    console.log(isEven(5));
+    console.log(isPrime(7));
+    console.log(isPerfect(28));
+
+    // B8 : Viết function trả ra trung bình cộng của một mảng số
+
+    function calculateAverage(numbers) {
+        var sum = 0;
+        for (var i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        return sum / numbers.length;
+    }
+
+    var numberArray = [1, 2, 3, 4, 5];
+    console.log(calculateAverage(numberArray));
+
+    // B9 Nhập vào một vào một số n, in ra n số nguyên tố tăng dần
+
+    function printPrimeNumbers(n) {
+        let count = 0;
+        let num = 2;
+
+        while (count < n) {
+            if (isPrime(num)) {
+                console.log(num);
+                count++;
+            }
+            num++;
+        }
+    }
+
+    let n = parseInt(prompt("B9 : Nhập vào số n "));
+
+    console.log(`${n} B9 : số nguyên tố tăng dần là:`);
+    printPrimeNumbers(n);
+
+
+</script>
+
+</html>

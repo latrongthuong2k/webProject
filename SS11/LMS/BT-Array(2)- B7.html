@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS HomeWork</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //B7 : Bài tập về mấy con cừu 
+
+    // 7.1 
+    let whiteMonsters = [5, 7, 300, 90, 24, 50, 75];
+    console.log('Xin chào đây là kích thước đàn cừu của tôi :');
+    console.log(whiteMonsters);
+    let sum = 0;
+    //7.2 ,  7.3
+    function caoLongCuu() {
+        let theBigOne = Math.max(...whiteMonsters);
+        for (let i = 0; i < whiteMonsters.length; i++) {
+            if (theBigOne == whiteMonsters[i]) {
+                whiteMonsters[i] = 8;
+                sum += whiteMonsters[i];
+            } else
+                sum += whiteMonsters[i];
+        }
+        console.log('Con bự nhất là : ' + theBigOne + ', cạo nó đi');
+        console.log('Sau khi cạo lông, đây là đàn của tôi :');
+        console.log(whiteMonsters);
+    }
+    // 7.4 , 7.5 , 7.6
+    let growMonth = 3; // 3 tháng 
+    for (let i = 1; i <= growMonth; i++) {
+        console.log('MONTH ' + [i]);
+        console.log('Đã một tháng trôi qua, bây giờ cừu của tôi đã lớn, đây là kích thước của chúng');
+        // grow 50
+        for (let j = 0; j < whiteMonsters.length; j++) {
+            whiteMonsters[j] += 50;
+        }
+        caoLongCuu();
+    }
+    // 7.7 Sau khi chán đời muốn bán tất để đi du lịch =)))
+    console.log('bây giờ tổng kích thước đàn của tôi là : ' + sum);
+    console.log('Tôi chán nuôi rồi sẽ bán tất cả luôn : lấy ' + sum + ' * 2$ = ' + sum * 2 + '$ Profit');
+</script>
+
+</html>
