@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .chicken {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .chicken:hover {
+            outline: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="timer">10:00</h1>
+    <div id="chickenContainer"></div>
+
+    <script>
+        var countdown;
+        var score = 0;
+
+        // Đồng hồ đếm ngược 
+        function startCountdown() {
+            var timerDisplay = document.getElementById("timer");
+            var timeLeft = 10 * 60; // 10 phút
+
+            updateTimerDisplay(timeLeft, timerDisplay);
+
+            countdown = setInterval(function () {
+                timeLeft--;
+                updateTimerDisplay(timeLeft, timerDisplay);
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    alert("Hết thời gian! Điểm số của bạn là: " + score);
+                } else if (timeLeft % 10 === 0) {
+                    createChicken();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay(timeLeft, timerDisplay) {
+            var minutes = Math.floor(timeLeft / 60);
+            var seconds = timeLeft % 60;
+            var formattedTime = padNumber(minutes) + ":" + padNumber(seconds);
+            timerDisplay.textContent = formattedTime;
+        }
+
+        function padNumber(number) {
+            return (number < 10) ? "0" + number : number;
+        }
+
+        function createChicken() {
+            var container = document.getElementById("chickenContainer");
+            var chicken = document.createElement("div");
+            chicken.className = "chicken";
+
+            chicken.addEventListener("mouseover", function () {
+                this.style.outline = "2px solid green";
+            });
+
+            chicken.addEventListener("mouseout", function () {
+                this.style.outline = "none";
+            });
+
+            chicken.addEventListener("click", function () {
+                this.style.display = "none";
+                score += 10;
+            });
+
+            container.appendChild(chicken);
+        }
+
+        startCountdown();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+</body>
+<style>
+    fieldset {
+        width: 30%;
+        text-align: center;
+    }
+
+    label {
+        display: inline-block;
+        width: 95px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 5px 40px;
+    }
+</style>
+<script>
+    // Tạo form element
+    var form = document.createElement("form");
+    var fieldset = document.createElement("fieldset");
+    form.appendChild(fieldset);
+    // Tạo tiêu đề "Thông tin học viên" (h3)
+    var heading = document.createElement("h3");
+    heading.textContent = "Thông tin học viên";
+    fieldset.appendChild(heading);
+
+    // Tạo input cho Họ và tên
+    var fullNameLabel = document.createElement("label");
+    fullNameLabel.textContent = "Họ và tên: ";
+    fieldset.appendChild(fullNameLabel);
+
+    var fullNameInput = document.createElement("input");
+    fullNameInput.type = "text";
+    fieldset.appendChild(fullNameInput);
+    fieldset.appendChild(document.createElement("br"));
+
+    // Tạo input cho Email
+    var emailLabel = document.createElement("label");
+    emailLabel.textContent = "Email: ";
+    fieldset.appendChild(emailLabel);
+
+    var emailInput = document.createElement("input");
+    emailInput.type = "email";
+    fieldset.appendChild(emailInput);
+    fieldset.appendChild(document.createElement("br"));
+
+    // Tạo input cho số điện thoại
+    var phoneLabel = document.createElement("label");
+    phoneLabel.textContent = "Số điện thoại: ";
+    fieldset.appendChild(phoneLabel);
+
+    var phoneInput = document.createElement("input");
+    phoneInput.type = "tel";
+    fieldset.appendChild(phoneInput);
+    fieldset.appendChild(document.createElement("br"));
+
+    // Tạo input cho quê quán
+    var addressLabel = document.createElement("label");
+    addressLabel.textContent = "Quê quán: ";
+    fieldset.appendChild(addressLabel);
+
+    var addressInput = document.createElement("input");
+    addressInput.type = "text";
+    fieldset.appendChild(addressInput);
+    fieldset.appendChild(document.createElement("br"));
+
+    // Tạo radio buttons cho giới tính
+    var genderLabel = document.createElement("label");
+    genderLabel.textContent = "Giới tính: ";
+    fieldset.appendChild(genderLabel);
+
+    var maleRadio = document.createElement("input");
+    maleRadio.type = "radio";
+    maleRadio.name = "gender";
+    maleRadio.value = "Nam";
+    maleRadio.checked = true;
+    fieldset.appendChild(maleRadio);
+
+    var maleLabel = document.createElement("span");
+    maleLabel.textContent = "Nam";
+    fieldset.appendChild(maleLabel);
+
+    var femaleRadio = document.createElement("input");
+    femaleRadio.type = "radio";
+    femaleRadio.name = "gender";
+    femaleRadio.value = "Nữ";
+    fieldset.appendChild(femaleRadio);
+
+    var femaleLabel = document.createElement("span");
+    femaleLabel.textContent = "Nữ";
+    fieldset.appendChild(femaleLabel);
+
+    fieldset.appendChild(document.createElement("br"));
+
+    // Tạo nút submit
+    var submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.textContent = "Lưu lại";
+    fieldset.appendChild(submitButton);
+
+    document.body.appendChild(form);
+
+
+
+</script>
+
+</html>

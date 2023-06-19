@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("");
+        background-size: cover;
+    }
+
+    #clock {
+        font-size: 48px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 200px;
+    }
+</style>
+
+<body>
+    <div id="clock"></div>
+
+
+</body>
+<script>
+    var clockElement = document.getElementById("clock");
+    setInterval(() => {
+        const currentTime = new Date().toLocaleTimeString();
+        clockElement.textContent = currentTime;
+        clockElement.style.backgroundColor = getRandomColor();
+    }, 1000);
+
+    function getRandomColor() {
+        var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+</script>
+
+</html>

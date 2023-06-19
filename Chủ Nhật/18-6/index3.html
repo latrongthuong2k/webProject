@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RK ACADEMY</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1 id="title">HELLO EVERYBODY 2023</h1>
+        <div id="clock"></div>
+        <h2 id="challenge">Thử thách bản thân với javascript</h2>
+        <ul>
+            <li id="nvg">NEVER GIVE UP!!</li>
+            <li id="academy">Thử thách học code với RK ACADEMY</li>
+            <li id="chance">Thử thách bản thân lĩnh vực mới</li>
+            <li id="fullstack">Thử thách 6 tháng fullstack</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const titleElement = document.getElementById('title');
+    const clockElement = document.getElementById('clock');
+    const challengeElement = document.getElementById('challenge');
+    const nvgElement = document.getElementById('nvg');
+    const academyElement = document.getElementById('academy');
+    const chanceElement = document.getElementById('chance');
+    const fullstackElement = document.getElementById('fullstack');
+    // todo : làm hàm random 
+    function getRandomColor() {
+        var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function getRandomText() {
+        const texts = [
+            'Thử thách bản thân với javascript',
+            'Luôn luôn nỗ lực',
+            'Luôn luôn cố gắng',
+            'Không sợ khó khăn',
+            'Luôn luôn được support tận tình',
+            'Luôn luôn đồng hành'
+        ];
+        return texts[Math.floor(Math.random() * texts.length)];
+    }
+
+    // todo : làm đổi màu nền title mỗi 1 giây 
+    setInterval(() => {
+        const currentYear = new Date().getFullYear();
+        titleElement.textContent = `Chào mừng đến với rikkei academy ${currentYear}`;
+        // titleElement.style.backgroundColor = getRandomColor();
+    }, 1000);
+    // update time zone
+    setInterval(() => {
+        const currentTime = new Date().toLocaleTimeString();
+        clockElement.textContent = currentTime;
+        clockElement.style.backgroundColor = getRandomColor();
+    }, 1000);
+    // update text chữ thử thách và màu nền
+    setInterval(() => {
+        challengeElement.style.backgroundColor = getRandomColor();
+        challengeElement.textContent = getRandomText();
+    }, 1000);
+
+
+</script>
+<style>
+    .wrapper {
+        text-align: center;
+    }
+
+    #clock {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    #nvg {
+        background-color: limegreen;
+    }
+
+    #academy {
+        background-color: yellow;
+    }
+
+    #chance,
+    #fullstack {
+        background-color: red;
+    }
+
+    li {
+        list-style: none;
+    }
+</style>
+
+</html>

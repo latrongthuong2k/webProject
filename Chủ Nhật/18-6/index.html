@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // bt3 test callback
+    let arr = [1, 2, 3, 4, 5];
+    function isPrime(arrayInt) {
+        console.log("Các phần tử là số nguyên tố:");
+        for (var i = 0; i < arrayInt.length; i++) {
+            var isPrimeNum = true;
+            if (arrayInt[i] <= 1) {
+                isPrimeNum = false;
+            } else {
+                for (var j = 2; j <= Math.sqrt(arrayInt[i]); j++) {
+                    if (arrayInt[i] % j === 0) {
+                        isPrimeNum = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrimeNum) {
+                console.log(arrayInt[i]);
+            }
+        }
+    }
+
+    function getArray(arr, callback) {
+        console.log(arr);
+        callback(arr);
+    }
+
+    getArray(arr, isPrime);
+
+    // bt4
+    let sum = 0;
+    let input = '1, 2, 3, 4, 5, 6';
+    let input2 = '1, a, 3, b, 5';
+
+    function sumF(string) {
+        let numbers = string.split(',').map(num => num.trim());// callback xoá khoảng trắng
+        for (let i = 0; i < numbers.length; i++) {
+            if (!isNaN(numbers[i])) {
+                sum += parseInt(numbers[i]);
+            }
+        }
+    }
+
+    sumF(input);
+    input = input.split(',').join(' + ');
+    console.log(input + ' = ' + sum);
+
+    sum = 0; // reset lại ban đầu
+    sumF(input2);
+    input2 = input2.split(',').join(' + ');
+    console.log(input2 + ' = ' + sum);
+
+
+</script>
+
+</html>
