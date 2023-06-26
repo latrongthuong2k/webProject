@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // bai 1:
+    // a
+    let person = {};
+    person.firstName = "Nguyễn Văn";
+    person.lastName = "Bình";
+
+    // b
+    person.lastName = "Hòa";
+
+    // c.
+    delete person.lastName;
+
+    // bai 2:
+    function checkEmpty(obj) {
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let obj1 = {};
+    console.log(checkEmpty(obj1)); // true
+
+    // bai 3:
+    let salaries = {
+        John: 1000,
+        Ann: 1600,
+        Pete: 1300
+    };
+
+    function calculateTotalSalary(salaries) {
+        let total = 0;
+        for (let employee in salaries) {
+            total += salaries[employee];
+        }
+        return total;
+    }
+
+    console.log(calculateTotalSalary(salaries)); // 3900
+
+    // bai 4: 
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My Menu"
+    };
+
+    function nhanGiaTri(menu) {
+        for (let key in menu) {
+            if (typeof menu[key] === "number") {
+                menu[key] *= 2;
+            }
+        }
+    }
+
+    nhanGiaTri(menu);
+    console.log(menu);
+    //bai 5: 
+    let calculator = {
+        value1: 0,
+        value2: 0,
+        read: function (a, b) {
+            this.value1 = a;
+            this.value2 = b;
+        },
+        sum: function () {
+            return this.value1 + this.value2;
+        },
+        mul: function () {
+            return this.value1 * this.value2;
+        }
+    };
+
+    calculator.read(5, 10);
+    console.log(calculator.sum()); // 15
+    console.log(calculator.mul()); // 50
+    // bai 6: 
+    let book = {
+        bookId: "",
+        bookName: "",
+        price: 0,
+        author: [],
+        bookStatus: "",
+        inputData: function (id, name, price, authors, status) {
+            this.bookId = id;
+            this.bookName = name;
+            this.price = price;
+            this.author = authors;
+            this.bookStatus = status;
+        },
+        displayData: function () {
+            console.log("Book ID:", this.bookId);
+            console.log("Book Name:", this.bookName);
+            console.log("Price:", this.price);
+            console.log("Author(s):", this.author.join(", "));
+            console.log("Book Status:", this.bookStatus);
+        }
+    };
+
+    book.inputData("123", "book Toán", 100, ["LTT", "Thưởng"], "Available");
+    book.displayData();
+
+    // bai 7:
+    let library = {
+        books: [],
+        addBook: function (book) {
+            this.books.push(book);
+        },
+        displayBooks: function () {
+            this.books.forEach(function (book, index) {
+                console.log("Book", index + 1);
+                book.displayData();
+                console.log("---------------------");
+            });
+        },
+        updateBook: function (bookIndex, newData) {
+            if (bookIndex >= 0 && bookIndex < this.books.length) {
+                let book = this.books[bookIndex];
+                Object.assign(book, newData);
+            }
+        },
+        deleteBook: function (bookIndex) {
+            if (bookIndex >= 0 && bookIndex < this.books.length) {
+                this.books.splice(bookIndex, 1);
+            }
+        },
+        sortBooksByPrice: function () {
+            this.books.sort(function (a, b) {
+                return a.price - b.price;
+            });
+        },
+        searchBookByName: function (bookName) {
+            let result = [];
+            for (let i = 0; i < this.books.length; i++) {
+                if (this.books[i].bookName.toLowerCase() === bookName.toLowerCase()) {
+                    result.push(this.books[i]);
+                }
+            }
+            return result;
+        }
+    };
+
+    let book1 = Object.create(book);
+    book1.inputData("123", "Học làm giàu", 19.99, ["rikkei"], "Available");
+
+    let book2 = Object.create(book);
+    book2.inputData("456", "Cách tịnh tâm", 24.99, ["rikkei"], "Available");
+
+    let book3 = Object.create(book);
+    book3.inputData("789", "Sách hướng dẫn giảm stress", 15.99, ["rikkei"], "Available");
+
+    library.addBook(book1);
+    library.addBook(book2);
+    library.addBook(book3);
+
+    console.log("All books:");
+    library.displayBooks();
+
+    // d. Cho phép xóa sách
+    library.deleteBook(1);
+
+    console.log("Sau khi xoá");
+    library.displayBooks();
+
+    // e. Cho phép sắp xếp sách theo giá sách tăng dần
+    library.sortBooksByPrice();
+
+    console.log("Sau khi sắp xếp");
+    library.displayBooks();
+
+    // f. Cho phép tìm kiếm sách theo tên sách
+    let searchedBooks = library.searchBookByName("Cách tịnh tâm");
+
+    console.log("Kết quả sau khi tìm sách , cách tịnh tâm : ");
+    searchedBooks.forEach(function (book, index) {
+        console.log("Book", index + 1);
+        book.displayData();
+        console.log("---------------------");
+    });
+
+</script>
+
+</html>

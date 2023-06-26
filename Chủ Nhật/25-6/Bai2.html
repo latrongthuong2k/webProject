@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="control">
+            <h2>World Country Data</h2>
+            <button id="population">Population</button>
+            <button id="languages">languages</button>
+        </div>
+
+        <span class="title"></span>
+        <div id="chart">
+            <div class="group">
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<style>
+    body {
+        margin: 0 auto;
+        width: 1000px;
+    }
+
+    .control {
+        text-align: center;
+    }
+
+    .group p {
+        width: 120px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 20px;
+    }
+
+
+    .group {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        gap: 20px;
+    }
+
+    .bar {
+        height: 30px;
+        background-color: rgb(0, 143, 143);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.265);
+    }
+
+    button {
+        background-color: orange;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px
+    }
+</style>
+<script>
+    var countries = [
+        { stt: 1, Country: 'China', Population: 1444216107 },
+        { stt: 2, Country: 'India', Population: 1393409038 },
+        { stt: 3, Country: 'United States', Population: 332915073 },
+        { stt: 4, Country: 'Indonesia', Population: 276361783 },
+        { stt: 5, Country: 'Pakistan', Population: 225199937 },
+        { stt: 6, Country: 'Brazil', Population: 213993437 },
+        { stt: 7, Country: 'Nigeria', Population: 211400708 },
+        { stt: 8, Country: 'Bangladesh', Population: 166303498 },
+        { stt: 9, Country: 'Russia', Population: 145912025 },
+        { stt: 10, Country: 'Mexico', Population: 130262216 }
+    ];
+    var languages = [
+        { STT: 1, Language: 'English', Speakers: 91 },
+        { STT: 2, Language: 'French', Speakers: 45 },
+        { STT: 3, Language: 'Arabic', Speakers: 25 },
+        { STT: 4, Language: 'Spanish', Speakers: 24 },
+        { STT: 5, Language: 'Portuguese', Speakers: 9 },
+        { STT: 6, Language: 'Russian', Speakers: 9 },
+        { STT: 7, Language: 'Dutch', Speakers: 8 },
+        { STT: 8, Language: 'German', Speakers: 7 },
+        { STT: 9, Language: 'Chinese', Speakers: 5 },
+        { STT: 10, Language: 'Serbian', Speakers: 4 }
+    ];
+    countries.sort(function (a, b) { return b.Country - a.Country; });
+    function makeChart(objects) {
+        let chart = document.getElementById("chart");
+        chart.innerHTML = ""
+        // 
+        if (objects === countries) {
+            var chinaPopulation = objects.find(function (country) {
+                return country.Country === 'China';
+            }).Population;
+            let title = document.createElement("p");
+            title.innerHTML = "Top 10 quốc gia có dân số đông nhất thế giới"
+            title.className = "title";
+            chart.appendChild(title);
+            for (let i = 0; i < objects.length; i++) {
+                var populationPercentage = (objects[i].Population / chinaPopulation) * 70;
+
+                let groupElement = document.createElement("div");
+                groupElement.className = "group";
+
+                let countryElement = document.createElement("p");
+                countryElement.textContent = objects[i].Country;
+                groupElement.appendChild(countryElement);
+
+                let barElement = document.createElement("div");
+                barElement.className = "bar";
+                barElement.style.width = populationPercentage + "%";
+                groupElement.appendChild(barElement);
+
+                let populationElement = document.createElement("p");
+                populationElement.textContent = objects[i].Population;
+                groupElement.appendChild(populationElement);
+
+                chart.appendChild(groupElement);
+            }
+        }
+
+        if (objects === languages) {
+            var englishSpeaker = objects.find(function (language) {
+                return language.Language === 'English';
+            }).Speakers;
+            let title = document.createElement("p");
+            title.innerHTML = "Top 10 ngôn ngữ được nói nhiều nhất thế giới"
+            title.className = "title";
+            chart.appendChild(title);
+            for (let i = 0; i < objects.length; i++) {
+                var speakersPercentage = (objects[i].Speakers / englishSpeaker) * 70;
+
+                let groupElement = document.createElement("div");
+                groupElement.className = "group";
+
+                let languageElement = document.createElement("p");
+                languageElement.textContent = objects[i].Language;
+                groupElement.appendChild(languageElement);
+
+                let barElement = document.createElement("div");
+                barElement.className = "bar";
+                barElement.style.width = speakersPercentage + "%";
+                groupElement.appendChild(barElement);
+
+                let speakerElement = document.createElement("p");
+                speakerElement.textContent = objects[i].Speakers;
+                groupElement.appendChild(speakerElement);
+                chart.appendChild(groupElement);
+            }
+        }
+
+    }
+    let buttonPopulation = document.getElementById("population");
+    buttonPopulation.addEventListener("click", function () {
+        makeChart(countries);
+    });
+    let buttonLanguages = document.getElementById("languages");
+    buttonLanguages.addEventListener("click", function () {
+        makeChart(languages);
+    });  
+</script>
+
+</html>
