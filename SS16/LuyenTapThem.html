@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <fieldset>
+            <h2>Thông tin sách</h2>
+            <div class="form-group">
+                <label for="bookId">Book ID:</label>
+                <input type="text" id="bookId" name="bookId" value="">
+            </div>
+            <div class="alert">
+                <p>ID không được để trống !</p>
+            </div>
+            <div class="form-group">
+                <label for="bookName">Tên sách:</label>
+                <input type="text" id="bookName" name="bookName" value="">
+            </div>
+            <div class="alert">
+                <p>ID không được để trống !</p>
+            </div>
+            <div class="form-group">
+                <label for="price">Giá:</label>
+                <input type="number" id="price" name="price" value="">
+            </div>
+            <div class="alert">
+                <p>ID không được để trống !</p>
+            </div>
+            <div class="form-group">
+                <label for="author">Tác giả:</label>
+                <input type="text" id="author" name="author" value="">
+            </div>
+            <div class="alert">
+                <p>ID không được để trống !</p>
+            </div>
+            <div class="form-group">
+                <div class="radio-group">
+                    <label>Trạng thái:</label>
+                    <label>
+                        <input type="radio" name="status" value="Active" checked>
+                        Active
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="InActive">
+                        In Active
+                    </label>
+                </div>
+            </div>
+            <button id="submitButton">Lưu lại</button>
+        </fieldset>
+    </form>
+    <form action="#" method="get" id="myForm2">
+        <fieldset>
+            <div class="findBox">
+                <label for="searchInput">Tìm kiếm sách:</label>
+                <input type="text" id="searchInput" name="searchInput">
+                <button id="search">Tìm kiếm</button>
+            </div>
+            <div class="tableInfo">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Book ID</td>
+                            <td>Tên sách</td>
+                            <td>Giá</td>
+                            <td>Tác giả</td>
+                            <td>Trạng thái</td>
+                            <td>Hành động</td>
+                            <td><button id="sort">sắp xếp</button></td>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBooks">
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+<style>
+    body {
+        display: flex;
+        gap: 30px;
+    }
+
+    #myForm2 {
+        width: 60%;
+    }
+
+    #find {
+        width: auto;
+    }
+
+    #myForm {
+        text-align: center;
+        width: 30%;
+    }
+
+
+    .alert {
+        display: none;
+        width: 210px;
+        margin-left: auto;
+        margin-right: 75px;
+        background-color: rgb(255, 114, 114);
+        color: rgb(102, 0, 0);
+        border-radius: 10px;
+    }
+
+    .alert p {
+        padding: 5px;
+    }
+
+    .findBox {
+        margin-bottom: 10px;
+    }
+
+    .tableInfo {
+        text-align: center;
+    }
+
+    .tableInfo td {
+        padding: 5px;
+    }
+
+    .tableInfo table {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: inline-block;
+        width: 110px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* 
+    .radio-group {
+    } */
+
+    button {
+        margin-top: 10px;
+    }
+
+    #submitButton {
+        padding: 5px 50px;
+    }
+</style>
+<script>
+    let indexBook = 0;
+    let book = {
+        bookId: "",
+        bookName: "",
+        price: 0,
+        author: "",
+        bookStatus: "",
+        inputData: function (id, name, price, authors, status) {
+            this.bookId = id;
+            this.bookName = name;
+            this.price = price;
+            this.author = authors;
+            this.bookStatus = status;
+        },
+        displayData: function () {
+            console.log("Book ID:", this.bookId);
+            console.log("Book Name:", this.bookName);
+            console.log("Price:", this.price);
+            console.log("Author(s):", this.author);
+            console.log("Book Status:", this.bookStatus);
+        }
+    };
+
+    let library = {
+        books: [],
+        addBook: function (book) {
+            this.books.push(book);
+        },
+        displayBooks: function (books) {
+            books.forEach(function (book, index) {
+                console.log("Book", index + 1);
+                book.displayData();
+                console.log("---------------------");
+            });
+        },
+        sortBooksByPrice: function () {
+            this.books.sort(function (a, b) {
+                return a.price - b.price;
+            });
+        },
+        searchBookByName: function (bookName) {
+            let result = [];
+            for (let i = 0; i < this.books.length; i++) {
+                if (this.books[i].bookName.toLowerCase() === bookName.toLowerCase()) {
+                    result.push(this.books[i]);
+                }
+            }
+            return result;
+        }
+    };
+
+    function check(event) {
+        event.preventDefault();
+
+        let bookId = document.getElementById("bookId");
+        let bookName = document.getElementById("bookName").value;
+        let price = parseFloat(document.getElementById("price").value);
+        let author = document.getElementById("author").value;
+        var bookStatus = document.querySelector('input[name="status"]:checked').value;
+        var alertElements = document.getElementsByClassName("alert");
+
+        if (bookId.readOnly == true) {
+            onEditingBook(indexBook);
+        } else {
+            let newBook = Object.create(book);
+            newBook.inputData(bookId.value, bookName, price, author, bookStatus);
+            library.addBook(newBook);
+            renderData();
+        }
+
+    }
+
+    let submitButton = document.getElementById("submitButton");
+    submitButton.addEventListener("click", check);
+
+    let tbody = document.getElementById("tableBooks");
+    function renderData() {
+        tbody.innerHTML = "";
+        library.books.forEach(function (book, index) {
+            tbody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${book.bookId}</td>
+                        <td>${book.bookName}</td>
+                        <td>${book.price}</td>
+                        <td>${book.author}</td>
+                        <td>${book.bookStatus}</td>
+                        <td> 
+                            <button onclick="editBook(${index})">Edit</button>
+                            <button onclick="deleteBook(${index})">Delete</button>
+                        </td>
+                    </tr>`;
+        });
+        document.getElementById("bookId").value = "";
+        document.getElementById("bookName").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("author").value = "";
+        if (document.querySelector('input[name="status"]:checked').value == "InActive") {
+            document.querySelector('input[value="Active"]').checked = true;
+        }
+
+    }
+
+    function editBook(index) {
+        let book = library.books[index];
+        document.getElementById("bookId").value = book.bookId;
+        document.getElementById("bookId").readOnly = true;
+        document.getElementById("bookId").style.backgroundColor = 'gray';
+        document.getElementById("bookName").value = book.bookName;
+        document.getElementById("price").value = book.price;
+        document.getElementById("author").value = book.author;
+        if (book.bookStatus == "InActive") {
+            document.querySelector('input[value="InActive"]').checked = true;
+        } else if (book.bookStatus == "Active") {
+            document.querySelector('input[value="Active"]').checked = true;
+        }
+
+
+        indexBook = index;
+    }
+    function onEditingBook(index) {
+        preventDefault();
+        let book = library.books[index];
+        book.bookId = document.getElementById("bookId").value;
+        document.getElementById("bookId").readOnly = false;
+        document.getElementById("bookId").style.backgroundColor = '';
+        book.bookName = document.getElementById("bookName").value;
+        book.price = document.getElementById("price").value;
+        book.author = document.getElementById("author").value;
+        book.bookStatus = document.querySelector('input[name="status"]:checked').value;
+        renderData();
+    }
+
+    function deleteBook(index) {
+        preventDefault();
+        library.books.splice(index, 1);
+        document.getElementById("bookId").style.backgroundColor = '';
+        renderData();
+    }
+
+    var sort = document.getElementById("sort");
+    sort.addEventListener("click", (e) => {
+        e.preventDefault();
+        library.sortBooksByPrice();
+        renderData();
+    });
+
+    var findBook = document.getElementById("search"); // button
+
+    findBook.addEventListener("click", (e) => {
+        e.preventDefault();
+        var searchText = document.getElementById("searchInput").value;
+        var searchedBooks = library.searchBookByName(searchText);
+        library.displayBooks(searchedBooks);
+
+    });
+</script>
+
+</html>
