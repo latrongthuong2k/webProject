@@ -1,0 +1,32 @@
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  th,
+  td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+
+  form {
+      margin-bottom: 16px;
+  }
+
+  .pagination {
+      margin-top: 16px;
+  }
+
+  .pagination a {
+      margin: 0 4px;
+      padding: 4px 8px;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ddd;
+  }
+
+  .pagination a.active {
+      background-color: #4CAF50;
+      color: #fff;
+  }

@@ -1,0 +1,106 @@
+  body {
+      width: 80%;
+      margin: 50px;
+      font-family: Arial, Helvetica, sans-serif;
+
+
+  }
+
+  fieldset {
+      width: 650px;
+      border: 1px solid rgb(187, 187, 187);
+  }
+
+  fieldset span {
+      display: block;
+      background-color: rgb(187, 187, 187);
+      height: 1px;
+      width: 100%;
+      margin-bottom: 30px;
+  }
+
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  input {
+      padding: 4px;
+  }
+
+  th,
+  td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+
+  form {
+      margin-bottom: 16px;
+  }
+
+  .pagination {
+      margin-top: 16px;
+  }
+
+  .pagination a {
+      margin: 0 4px;
+      padding: 4px 8px;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ddd;
+  }
+
+  .pagination a.active {
+      background-color: #4CAF50;
+      color: #fff;
+  }
+
+  .lableTitle {
+      display: inline-block;
+      width: 90px;
+  }
+
+  #addInfo {
+      margin-left: 95px;
+
+      padding: 8px 35px;
+      background-color: rgb(0, 110, 255);
+      color: white;
+      border: none;
+      border-radius: 5px;
+  }
+
+  .catalogTable {
+      border: 1px solid rgb(187, 187, 187);
+      padding: 10px;
+  }
+
+  #catalogTable {
+      border-collapse: collapse;
+
+  }
+
+  .deleteButton {
+      text-align: center;
+  }
+
+  .deleteButton button {
+      border: none;
+      background-color: #fff;
+      color: blue;
+      font-size: 16px;
+  }
+
+  .pop-up {
+      visibility: hidden;
+      color: red;
+  }
+
+  .fixContent {
+      margin-left: 125px;
+  }
+
+  .fixContent2 {
+      margin-left: 62px;
+  }

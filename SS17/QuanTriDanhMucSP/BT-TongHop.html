@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị danh mục sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <h1>Quản trị danh mục sản phẩm</h1>
+
+    <form id="addForm">
+        <fieldset>
+            <h2>Thêm mới danh mục sản phẩm</h2>
+            <label for="catalogId">Mã danh mục sản phẩm:</label>
+            <input type="text" id="catalogId" name="catalogId" required><br><br>
+
+            <label for="catalogName">Tên danh mục sản phẩm:</label>
+            <input type="text" id="catalogName" name="catalogName" required><br><br>
+
+            <label for="priority">Độ ưu tiên:</label>
+            <input type="number" id="priority" name="priority" required><br><br>
+
+            <label for="descriptions">Mô tả:</label><br>
+            <textarea id="descriptions" name="descriptions" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="status">Trạng thái:</label>
+            <select id="status" name="status" required>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select><br><br>
+
+            <button type="submit" id="addInfo">Thêm mới</button>
+        </fieldset>
+    </form>
+
+    <form id="searchForm">
+        <h2>Tìm kiếm danh mục sản phẩm</h2>
+        <label for="searchKeyword">Tên danh mục sản phẩm:</label>
+        <input type="text" id="searchKeyword" name="searchKeyword" required>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <table id="catalogTable">
+        <thead>
+            <tr>
+                <th>Mã danh mục <button>v</button></th>
+                <th>Tên danh mục <button>v</button></th>
+                <th>Độ ưu tiên <button>v</button></th>
+                <th>Mô tả <button>v</button></th>
+                <th>Trạng thái <button>v</button></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="pagination" class="pagination"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

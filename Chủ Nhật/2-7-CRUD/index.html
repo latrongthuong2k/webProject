@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form đăng ký users</title>
+
+
+<body>
+    <h1>Quản trị danh mục sản phẩm</h1>
+
+    <form id="addForm">
+        <fieldset>
+            <h2>会員情報</h2>
+            <span></span>
+
+            <label class="lableTitle" for="catalogName">氏名</label>
+            <input style="width: 200px;" type="text" id="catalogName" name="catalogName">
+            <b class="pop-up">「氏名」を入力して。</b>
+
+            <br><br>
+
+            <label class="lableTitle" for="gender">性別</label>
+            <label>
+                <input type="radio" name="gender" value="男">
+                男
+            </label>
+            <label>
+                <input type="radio" name="gender" value="女">
+                女
+            </label>
+            <b class="pop-up fixContent">「性別」を選択して。</b>
+            <br><br>
+
+            <label class="lableTitle" for="email">メール</label>
+            <input style="width: 200px;" type="email" id="email" name="email">
+            <b class="pop-up">「メール」を正しいに入力して。</b>
+            <br><br>
+
+            <label class="lableTitle" for="phone">電話番号</label>
+            <input style="width: 200px;" type="text" id="phone" name="phone">
+            <b class="pop-up">「電話番号」を正しいに入力して。</b>
+            <br><br>
+
+
+            <label class="lableTitle" for="japaneseLevel">日本語能力</label>
+            <select id="japaneseLevel" name="japaneseLevel"
+                style="border-color: rgba(0, 0, 0, 0.18); width: 150px; height: 30px;padding-left: 5px; border-radius: 3px;">
+                <option value="N5">N5</option>
+                <option value="N4">N4</option>
+                <option value="N3">N3</option>
+                <option value="N2">N2</option>
+                <option value="N1">N1</option>
+            </select>
+            <b class="pop-up fixContent2">「日本語能力」を入力して。</b>
+            <br><br>
+
+            <label class="lableTitle" for="point">点数</label>
+            <input style="width: 200px;" type="text" id="point" name="point">
+            <b class="pop-up">0 〜 180 の「点数」を入力して。</b>
+            <br><br>
+
+            <button type="submit" id="addInfo">登録</button>
+        </fieldset>
+    </form>
+
+
+    <form id="searchForm">
+        <h2>Tìm kiếm thông tin</h2>
+        <label for="searchKeyword">Tên :</label>
+        <input type="text" id="searchKeyword" name="searchKeyword" required>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <div class="catalogTable">
+        <h2>会員情報一覧</h2>
+        <table border="1px" id="catalogTable">
+            <thead style="background-color: rgb(33, 33, 33); color: white;">
+                <tr>
+                    <td>ID</td>
+                    <td>氏名</td>
+                    <td>性別</td>
+                    <td>メール</td>
+                    <td>電話番号</td>
+                    <td>日本語能力</td>
+                    <td>点数</td>
+                    <td>アクション</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="pagination" class="pagination"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

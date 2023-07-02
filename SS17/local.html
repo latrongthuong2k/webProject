@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Local Storage Demo</title>
+
+</head>
+
+<body>
+    <h1>Local Storage</h1>
+    <div id="user-container">
+        <input type="text" id="user-name" placeholder="Nhập tên người dùng">
+        <button id="add-button">Thêm</button>
+        <button id="delete-button">Xóa</button>
+    </div>
+    <div id="user-list">
+        <h2>Danh sách người dùng:</h2>
+        <ul id="user-names"></ul>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #user-container {
+            margin-bottom: 20px;
+        }
+
+        #user-list {
+            margin-top: 20px;
+        }
+
+        #user-names {
+            list-style: none;
+            padding: 0;
+        }
+
+        #user-names li {
+            margin-bottom: 5px;
+        }
+
+        #delete-button {
+            margin-left: 10px;
+        }
+    </style>
+
+    <script>
+        // Kiểm tra xem có tên người dùng trong Local Storage hay không
+        function checkLocalStorage() {
+            if (localStorage.getItem('userName')) {
+                // Hiển thị nút "Sửa" nếu đã có người dùng
+                document.getElementById('add-button').textContent = 'Sửa';
+                document.getElementById('delete-button').style.display = 'inline-block';
+                return true;
+            } else {
+                // Hiển thị nút "Thêm" nếu chưa có người dùng
+                document.getElementById('add-button').textContent = 'Thêm';
+                document.getElementById('delete-button').style.display = 'none';
+                return false;
+            }
+        }
+
+        // Thêm tên người dùng vào Local Storage
+        function addUserToLocalStorage(userName) {
+            localStorage.setItem('userName', userName);
+        }
+
+        // Lấy tên người dùng từ Local Storage
+        function getUserNameFromLocalStorage() {
+            return localStorage.getItem('userName');
+        }
+
+        // Xóa tên người dùng khỏi Local Storage
+        function deleteUserFromLocalStorage() {
+            localStorage.removeItem('userName');
+        }
+
+        // Hiển thị tên người dùng lên giao diện
+        function displayUserName(userName) {
+            var userNamesElement = document.getElementById('user-names');
+            userNamesElement.innerHTML = '<li>' + userName + '</li>';
+        }
+
+        // Xử lý sự kiện khi nhấn nút "Thêm"
+        function addButtonClickHandler() {
+            var userNameInput = document.getElementById('user-name');
+            var userName = userNameInput.value.trim();
+
+            if (userName !== '') {
+                addUserToLocalStorage(userName);
+                displayUserName(userName);
+                userNameInput.value = '';
+                checkLocalStorage();
+            }
+        }
+
+        // Xử lý sự kiện khi nhấn nút "Xóa"
+        function deleteButtonClickHandler() {
+            deleteUserFromLocalStorage();
+            var userNamesElement = document.getElementById('user-names');
+            userNamesElement.innerHTML = '';
+            checkLocalStorage();
+        }
+
+        // Xử lý khi trang web được tải
+        window.onload = function () {
+            var addButton = document.getElementById('add-button');
+            addButton.addEventListener('click', addButtonClickHandler);
+
+            var deleteButton = document.getElementById('delete-button');
+            deleteButton.addEventListener('click', deleteButtonClickHandler);
+
+            var userName = getUserNameFromLocalStorage();
+            if (userName) {
+                displayUserName(userName);
+            }
+
+            checkLocalStorage();
+        };
+
+    </script>
+</body>
+
+</html>
