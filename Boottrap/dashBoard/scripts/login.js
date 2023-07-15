@@ -1,20 +1,23 @@
-var listAdmins = [
+// userList
+var userSystems = [
     { email: 'latrongthuong7@gmail.com', password: 'Thuong191020' },
 ];
-var saveUsers = [];
-
+localStorage.setItem('admin', JSON.stringify(userSystems));
 function CheckAdmin(e) {
     e.preventDefault();
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var boxChecks = document.querySelectorAll('.boxCheck');
-    listAdmins.forEach(admin => {
+    var admins = JSON.parse(localStorage.getItem('admin'));
+    admins.forEach(admin => {
+        // push và đi qua trang dashboard
         if (admin.email === email && admin.password === password) {
-            var newUser = { email: email, password: password };
-            saveUsers.push(newUser);
-            localStorage.setItem('user', JSON.stringify(saveUsers));
-            window.location.href = "./DashBoard/DashBoard.html";
+            localStorage.setItem('userSystems', JSON.stringify(userSystems));
+            window.location.href = "../Html/DashBoard.html";
+            currentTarget = 'DashBoard';
+            localStorage.setItem('currentTarget', JSON.stringify(currentTarget));
         }
+        // khi không nhập
         else if (email === "" && password === "") {
             boxChecks[0].querySelector('p').innerHTML = 'Email không được để trống !'
             boxChecks[1].querySelector('p').innerHTML = 'Pass không được để trống !'
@@ -23,7 +26,7 @@ function CheckAdmin(e) {
                 box.querySelector('div').classList.remove('hidden');
                 box.querySelector('div').classList.add('visible');
             })
-        }
+        } // khi nhập sai
         else {
             boxChecks[0].querySelector('p').innerHTML = 'Opp có vẻ sai email rùi !'
             boxChecks[1].querySelector('p').innerHTML = 'Opp có vẻ sai pass rùi !'
@@ -36,11 +39,13 @@ function CheckAdmin(e) {
     });
 }
 function checkLogin() {
-    if (localStorage.getItem('user') == null)
+    if (localStorage.getItem('userSystems') == null)
         return;
-    var data = JSON.parse(localStorage.getItem('user'));
-    if (data != null || data.email === listAdmins.email && data.password === listAdmins.password) {
-        window.location.href = "./dashBoard/DashBoard.html";
+    var data = JSON.parse(localStorage.getItem('userSystems')); // list Users
+    if (data != null) {
+        currentTarget = 'DashBoard';
+        window.location.href = "../Html/DashBoard.html";
+        // 
     }
 
 }
@@ -56,14 +61,18 @@ function togglePassword() {
     }
 }
 
-document.getElementById('unHindPass').addEventListener('click', togglePassword)
-document.getElementById('submitButton').addEventListener('click', (e) => CheckAdmin(e));
-document.getElementById('email').addEventListener('change', (e) => {
-    e.preventDefault();
-    var boxChecks = document.querySelectorAll('.boxCheck');
-    boxChecks.forEach(box => {
-        box.querySelector('div').classList.remove('visible');
-        box.querySelector('div').classList.add('hidden');
-    })
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkLogin();
+    document.getElementById('unHindPass').addEventListener('click', togglePassword)
+    document.getElementById('submitButton').addEventListener('click', (e) => CheckAdmin(e));
+    document.getElementById('email').addEventListener('change', (e) => {
+        e.preventDefault();
+        var boxChecks = document.querySelectorAll('.boxCheck');
+        boxChecks.forEach(box => {
+            box.querySelector('div').classList.remove('visible');
+            box.querySelector('div').classList.add('hidden');
+        })
+    });
 });
-document.addEventListener('DOMContentLoaded', () => { checkLogin(); });
+// 
