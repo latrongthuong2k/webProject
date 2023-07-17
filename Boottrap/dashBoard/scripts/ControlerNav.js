@@ -15,7 +15,7 @@ items.forEach(item => {
     if (item.id === 'Users' && currentTarget === USER_TARGET) {
         changeStyle(item);
     }
-    if (item.id === 'Students' && currentTarget === USER_TARGET) {
+    if (item.id === 'Students' && currentTarget === STUDENT_TARGET) {
         changeStyle(item);
     }
 
@@ -29,9 +29,9 @@ function changeStyle(item) {
     item.style.boxShadow = '0px 0px 40px 0px rgba(0, 0, 0, 0.4)';
 
     // icon
-    itemsIcons.forEach(button => {
-        button.style.visibility = 'hidden';
-    });
+    // itemsIcons.forEach(icon => {
+    //     icon.style.visibility = 'hidden';
+    // });
     var icon = item.querySelector(".customIcon");
     icon.style.visibility = 'visible';
 }
@@ -52,6 +52,14 @@ function changePage(item) {
         } else {
 
             switch (button.id) {
+                case "Course":
+                    button.addEventListener("click", (e) => {
+                        // e.preventDefault();
+                        currentTarget = COURSE_TARGET;
+                        localStorage.setItem('currentTarget', JSON.stringify(currentTarget));
+                        window.location.href = "../Html/CourseListPage.html";
+                    });
+                    break;
                 case "Class":
                     button.addEventListener("click", (e) => {
                         // e.preventDefault();
@@ -61,16 +69,6 @@ function changePage(item) {
 
                     });
                     break;
-
-                case "Course":
-                    button.addEventListener("click", (e) => {
-                        // e.preventDefault();
-                        currentTarget = COURSE_TARGET;
-                        localStorage.setItem('currentTarget', JSON.stringify(currentTarget));
-                        window.location.href = "../Html/CourseListPage.html";
-                    });
-                    break;
-
                 case "Students":
                     button.addEventListener("click", (e) => {
                         // e.preventDefault();

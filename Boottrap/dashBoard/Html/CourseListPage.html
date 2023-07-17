@@ -98,7 +98,7 @@
                         </p>
                     </div>
                     <div>
-                        <button type="button" id="addBtn">Thêm khoá học</button>
+                        <button type="button" class="addBtn" id="addBtn">Thêm khoá học</button>
                     </div>
                 </div>
                 <div class="Box-2">
@@ -125,12 +125,14 @@
                                                 <div class="dropdown">
                                                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
                                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                                        STT</a>
+                                                        STT
+                                                    </a>
+
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" onclick="sortAZ() " id="Z-A"
-                                                                href="#">Sắp xếp giảm dần</a></li>
-                                                        <li><a class="dropdown-item" onclick="sortZA()" id="A-Z"
-                                                                href="#">Sắp xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc()" href="#">Sắp
+                                                                xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc(-1)" href="#">Sắp
+                                                                xếp giảm dần</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -232,16 +234,16 @@
     <script src="https://kit.fontawesome.com/eca9d5c25e.js" crossorigin="anonymous"></script>
 
     <!----------- script Load ------------>
+    <!-- Base -->
+    <script src="../scripts/changeTarget.js"></script>
     <!-- Level 1 -->
     <script src="../scripts/Main.js"></script>
-    <script src="../scripts/changeTarget.js"></script>
     <script src="../scripts/loadTarget.js"></script>
     <!-- level 2 -->
+    <script src="../scripts/ControlerNav.js"></script>
     <script src="../scripts/SearchInfo.js"></script>
     <script src="../scripts/submitForm.js"></script>
-    <script src="../scripts/ControlerNav.js"></script>
     <script src="../scripts/RenderCatalog.js"></script>
-
     <!------------------------------------>
 
 

@@ -97,8 +97,13 @@
                             <span class="slack">/</span><span class="C"></span>
                         </p>
                     </div>
-                    <div>
-                        <button type="button" id="addBtn">Thêm học sinh</button>
+                    <div class="btn-group">
+                        <div>
+                            <select id="select-course" class="addBtn">
+                                <!-- Option sẽ được thêm tự động bằng JavaScript -->
+                            </select>
+                        </div>
+                        <button type="button" class="addBtn" id="addBtn">Thêm học sinh</button>
                     </div>
                 </div>
                 <div class="Box-2">
@@ -128,10 +133,10 @@
                                                         STT
                                                     </a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" onclick="sortAZ() " id="Z-A"
-                                                                href="#">Sắp xếp giảm dần</a></li>
-                                                        <li><a class="dropdown-item" onclick="sortZA()" id="A-Z"
-                                                                href="#">Sắp xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc()" href="#">Sắp
+                                                                xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc(-1)" href="#">Sắp
+                                                                xếp giảm dần</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -207,12 +212,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-
+                            Xin nhắc lại, bạn có thực sự muốn khoá tài khoảng này ?
                         </div>
                         <div class="modal-footer">
                             <button type="button" id="No" class="btn btn-secondary"
                                 data-bs-dismiss="modal">Không</button>
-                            <button type="button" id="Yes" class="btn btn-success" data-bs-dismiss="modal">Có</button>
+                            <button type="button" id="Lock" class="btn btn-success" data-bs-dismiss="modal">Có</button>
                         </div>
                     </div>
                 </div>
@@ -236,9 +241,10 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/eca9d5c25e.js" crossorigin="anonymous"></script>
     <!----------- script Load ------------>
+    <!-- Base -->
+    <script src="../scripts/changeTarget.js"></script>
     <!-- Level 1 -->
     <script src="../scripts/Main.js"></script>
-    <script src="../scripts/changeTarget.js"></script>
     <script src="../scripts/loadTarget.js"></script>
     <!-- level 2 -->
     <script src="../scripts/SearchInfo.js"></script>

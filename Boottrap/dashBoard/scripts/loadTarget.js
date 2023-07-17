@@ -21,15 +21,15 @@ switch (currentTarget) {
         break;
 }
 
-var h3 = document.getElementById('submitBoard');
-switch (currentTarget) {
-    case 'courseList':
-        h3.innerHTML = 'Tạo mới khoá học';
-        break;
-    case 'studentList':
-        h3.innerHTML = 'Tạo mới sinh viên';
-        break;
-    case 'classList':
-        h3.innerHTML = 'Tạo mới lớp học';
-        break;
-}
+// var h3 = document.getElementById('submitBoard');
+// switch (currentTarget) {
+//     case 'courseList':
+//         h3.innerHTML = 'Tạo mới khoá học';
+//         break;
+//     case 'studentList':
+//         h3.innerHTML = 'Tạo mới sinh viên';
+//         break;
+//     case 'classList':
+//         h3.innerHTML = 'Tạo mới lớp học';
+//         break;
+// }

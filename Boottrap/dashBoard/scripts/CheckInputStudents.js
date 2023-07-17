@@ -1,4 +1,6 @@
 function checkInputStudent(elementInput, action) {
+    var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
+
     // target la một list các element Input type text của đối tượng studentList
     const feelBackID = document.getElementById('feelBackID');
     const feelBackBirthday = document.getElementById('feelBackBirthday');
@@ -11,7 +13,7 @@ function checkInputStudent(elementInput, action) {
     // Condition
     var isValid = true;
     // Validate trường studentID
-    if (elementInput.id === 'studentID') {
+    if (elementInput.id === 'studentID' && elementInput.readOnly === false) {
         if (elementInput.value === "") {
             elementInput.classList.remove('is-valid');
             elementInput.classList.add('is-invalid');
@@ -20,10 +22,11 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'ID không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             var isExistingID = false;
             for (var i = 0; i < currentTargetList.length; i++) {
-                if (currentTargetList[i].studentID === elementInput.value) {
+                if (currentTargetList[i].studentID.replace(/\s/g, '') === elementInput.value.replace(/\s/g, '')) {
                     isExistingID = true;
                     break;
                 }
@@ -37,7 +40,10 @@ function checkInputStudent(elementInput, action) {
                 invalidFeedback.innerHTML = 'ID đã tồn tại, xin vui lòng nhập ID khác !';
                 invalidFeedback.style.display = 'block';
                 isValid = false;
-            } else {
+                allowSubmit = false;
+            }
+            else {
+                elementInput.style.backgroundColor = '';
                 elementInput.classList.add('is-valid');
                 elementInput.classList.remove('is-invalid');
                 feelBackID.querySelector('.valid-feedback').style.display = 'block';
@@ -46,7 +52,31 @@ function checkInputStudent(elementInput, action) {
                 newInformationStudent.studentID = elementInput.value;
 
                 isValid = true;
+                allowSubmit = true;
             }
+        }
+    }
+    //
+    if (elementInput.id === 'name' && elementInput.readOnly === false) {
+        if (elementInput.value === "") {
+            elementInput.classList.remove('is-valid');
+            elementInput.classList.add('is-invalid');
+            var invalidFeedback = feelBackName.querySelector('.invalid-feedback');
+            feelBackName.querySelector('.valid-feedback').style.display = 'none';
+            invalidFeedback.innerHTML = 'Tên học sinh không được để trống !';
+            invalidFeedback.style.display = 'block';
+            isValid = false;
+            allowSubmit = false;
+        } else {
+            elementInput.classList.add('is-valid');
+            elementInput.classList.remove('is-invalid');
+            feelBackName.querySelector('.valid-feedback').style.display = 'block';
+            feelBackName.querySelector('.invalid-feedback').style.display = 'none';
+
+            newInformationStudent.Name = elementInput.value;
+
+            isValid = true;
+            allowSubmit = true;
         }
     }
     //
@@ -59,6 +89,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Ngày sinh không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -69,27 +100,7 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Birthday = elementInput.value;
 
             isValid = true;
-        }
-    }
-    //
-    if (elementInput.id === 'name') {
-        if (elementInput.value === "") {
-            elementInput.classList.remove('is-valid');
-            elementInput.classList.add('is-invalid');
-            var invalidFeedback = feelBackName.querySelector('.invalid-feedback');
-            feelBackName.querySelector('.valid-feedback').style.display = 'none';
-            invalidFeedback.innerHTML = 'Tên học sinh không được để trống !';
-            invalidFeedback.style.display = 'block';
-            isValid = false;
-        } else {
-            elementInput.classList.add('is-valid');
-            elementInput.classList.remove('is-invalid');
-            feelBackName.querySelector('.valid-feedback').style.display = 'block';
-            feelBackName.querySelector('.invalid-feedback').style.display = 'none';
-
-            newInformationStudent.Name = elementInput.value;
-
-            isValid = true;
+            allowSubmit = true;
         }
     }
     //
@@ -102,6 +113,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Lớp học không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -111,6 +123,7 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Class = elementInput.value;
 
             isValid = true;
+            allowSubmit = true;
         }
     }
     //
@@ -123,6 +136,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Địa chỉ không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -132,6 +146,7 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Address = elementInput.value;
 
             isValid = true;
+            allowSubmit = false;
         }
     }
     //
@@ -145,6 +160,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Email không đúng !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -154,6 +170,7 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Email = elementInput.value;
 
             isValid = true;
+            allowSubmit = true;
         }
     }
     //
@@ -168,6 +185,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Số điện thoại không đúng !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -178,6 +196,7 @@ function checkInputStudent(elementInput, action) {
             formatNumber(elementInput);
 
             isValid = true;
+            allowSubmit = true;
         }
     }
     // *** Action cho func

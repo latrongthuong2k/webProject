@@ -1,4 +1,8 @@
+var allowSubmit = false;
+
 function checkInputCourse(elementInput, action) {
+    var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
+
     // target la một list các element Input type text của đối tượng 
     const feelBackCourseId = document.getElementById('feelBackCourseId');
     const feelBackCourseName = document.getElementById('feelBackCourseName');
@@ -6,7 +10,8 @@ function checkInputCourse(elementInput, action) {
     // Condition
     var isValid = true;
     // Validate trường CourseId
-    if (elementInput.id === 'CourseId') {
+    if (elementInput.id === 'CourseId' && elementInput.readOnly === false) {
+        debugger
         if (elementInput.value === "") {
             elementInput.classList.remove('is-valid');
             elementInput.classList.add('is-invalid');
@@ -15,10 +20,11 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'ID course không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             var isExistingID = false;
             for (var i = 0; i < currentTargetList.length; i++) {
-                if (currentTargetList[i].CourseId === elementInput.value) {
+                if (currentTargetList[i].CourseId.replace(/\s/g, '') === elementInput.value.replace(/\s/g, '')) {
                     isExistingID = true;
                     break;
                 }
@@ -32,7 +38,10 @@ function checkInputCourse(elementInput, action) {
                 invalidFeedback.innerHTML = 'ID khoá học đã tồn tại, xin vui lòng nhập ID khác !';
                 invalidFeedback.style.display = 'block';
                 isValid = false;
+                allowSubmit = false;
             } else {
+                debugger
+                elementInput.style.backgroundColor = '';
                 elementInput.classList.add('is-valid');
                 elementInput.classList.remove('is-invalid');
                 feelBackCourseId.querySelector('.valid-feedback').style.display = 'block';
@@ -42,6 +51,7 @@ function checkInputCourse(elementInput, action) {
                 course.CourseId = elementInput.value;
 
                 isValid = true;
+                allowSubmit = true;
             }
         }
     }
@@ -55,16 +65,40 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'Tên course không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
-            elementInput.classList.add('is-valid');
-            elementInput.classList.remove('is-invalid');
-            feelBackCourseName.querySelector('.valid-feedback').style.display = 'block';
-            feelBackCourseName.querySelector('.invalid-feedback').style.display = 'none';
+            var isExistingName = false;
+            for (var i = 0; i < currentTargetList.length; i++) {
+                if (currentTargetList[i].CourseName.replace(/\s/g, '') === elementInput.value.replace(/\s/g, '')) {
+                    isExistingName = true;
+                    break;
+                }
+            }
+            if (isExistingName) {
+                elementInput.classList.remove('is-valid');
+                elementInput.classList.add('is-invalid');
+                elementInput.style.backgroundColor = bgColorWarning;
+                var invalidFeedback = feelBackCourseName.querySelector('.invalid-feedback');
+                feelBackCourseName.querySelector('.valid-feedback').style.display = 'none';
+                invalidFeedback.innerHTML = 'Tên khoá học đã tồn tại, xin vui lòng đặt tên khác !';
+                invalidFeedback.style.display = 'block';
+                isValid = false;
+                allowSubmit = false;
+            }
+            else {
+                elementInput.style.backgroundColor = '';
+                elementInput.classList.add('is-valid');
+                elementInput.classList.remove('is-invalid');
+                feelBackCourseName.querySelector('.valid-feedback').style.display = 'block';
+                feelBackCourseName.querySelector('.invalid-feedback').style.display = 'none';
 
 
-            course.CourseName = elementInput.value;
+                course.CourseName = elementInput.value;
 
-            isValid = true;
+                isValid = true;
+                allowSubmit = true;
+            }
+
         }
     }
     //
@@ -77,6 +111,7 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'Thời gian không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
+            allowSubmit = false;
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -86,6 +121,7 @@ function checkInputCourse(elementInput, action) {
             course.CourseTime = elementInput.value;
 
             isValid = true;
+            allowSubmit = true;
         }
     }
     // *** Action cho func

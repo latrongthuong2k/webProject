@@ -1,8 +1,4 @@
 
-
-// tạo sự kiện render từng bảng đối với từng trường dữ liệu khác nhau 
-var StudentManagement = [];
-
 // courseList
 var courseList = [];
 
@@ -15,7 +11,7 @@ var studentList = [];
 // users
 userSystems = [
 
-    { email: 'latrongthuong7@gmail.com', password: 'thuong191020' }
+    { email: 'latrongthuong7@gmail.com', password: 'thuong191020', lockStatus: false, userName: 'Thuong' }
 
 ];
 
@@ -36,7 +32,7 @@ var classRoom = {
     ClassId: '', ClassName: '', Descriptions: '', TotalNumber: '', Lecturer: '', Status: '', Students: []
 }
 var user = {
-    email: '', password: ''
+    email: '', password: '', lockStatus: '', userName: ''
 }
 var course = { CourseId: '', CourseName: '', CourseTime: '', Status: '', Class: [] };
 
@@ -53,8 +49,8 @@ function patternTbodyCourse(catalog = {}, index = '') {
           <td>${catalog.CourseTime}</td>
           <td>${catalog.Status}</td>
           <td class="actionButton">
-        <button  onclick="EditInfoCourse('${catalog.CourseId}')"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button  onclick="DeleteInfo('${catalog.CourseId}')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>  
+        <button  onclick="editInfoCourse('${catalog.CourseId}')"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button  onclick="deleteInfo('${catalog.CourseId}')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>  
           </td>
         `;
     return data;
@@ -70,8 +66,8 @@ function patternTbodyClass(catalog = {}, index = 0) {
           <td>${catalog.TotalNumber}</td>
           <td>${catalog.Status}</td>
           <td class="actionButton">
-        <button  onclick="EditInfoClass('${catalog.ClassId}')"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button  onclick="DeleteInfo('${catalog.ClassId}')"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>  
+        <button  onclick="editInfoClass('${catalog.ClassId}')"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button  onclick="deleteInfo('${catalog.ClassId}')"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>  
           </td>
         `;
     return data;
@@ -89,8 +85,8 @@ function patternTbodyStudents(catalog = {}, index = 0) {
           <td>${catalog.Status}</td>
           <td>${catalog.Birthday}</td>
           <td class="actionButton">
-          <button onclick="EditInfoStudent('${catalog.studentID}')"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button onclick="DeleteInfo('${catalog.studentID}')" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>  
+          <button onclick="editInfoStudent('${catalog.studentID}')"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button onclick="deleteInfo('${catalog.studentID}')" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>  
             </td>
         `
     return data;
@@ -102,10 +98,13 @@ function patternTbodyUser(catalog = {}, index = 0) {
           <td>${catalog.email}</td>
           <td>${catalog.password}</td>
           <td>${catalog.userName}</td>
-          <td>${catalog.Status}</td>
-          <td class="actionButton">
-        <button  onclick="EditInfo('${catalog.email}')"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button  onclick="DeleteInfo('${catalog.email}')" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>  
+          <td>${catalog.lockStatus}</td>
+          <td class="actionUser">
+              <button onclick=""><i
+                      class="fa-solid fa-lock-open"></i></button>
+              <button onclick="" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"><i
+                      class="fa-solid fa-lock"></i></i></button>
           </td>
         `
     return data;

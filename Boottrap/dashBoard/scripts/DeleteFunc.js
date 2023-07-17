@@ -78,13 +78,12 @@ function findIndexAndDelete(listItems, targetId) {
 };
 
 
-function DeleteInfo(targetId) {
-
-    var dataCurrentPage = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
+function deleteInfo(targetId) {
     document.getElementById('Yes').addEventListener('click', (e) => {
+        var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
         e.preventDefault();
-        findIndexAndDelete(dataCurrentPage, targetId);
-        renderCatalogs(dataCurrentPage,);
+        findIndexAndDelete(currentTargetList, targetId);
+        renderCatalogs();
     })
 
 }

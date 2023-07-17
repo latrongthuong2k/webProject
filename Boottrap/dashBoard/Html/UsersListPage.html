@@ -125,10 +125,10 @@
                                                     </a>
 
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" onclick=" sortAZ() " id="Z-A"
-                                                                href="#">Sắp xếp giảm dần</a></li>
-                                                        <li><a class="dropdown-item" onclick="sortZA()" id="A-Z"
-                                                                href="#">Sắp xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc()" href="#">Sắp
+                                                                xếp tăng dần</a></li>
+                                                        <li><a class="dropdown-item" onclick="sortFunc(-1)" href="#">Sắp
+                                                                xếp giảm dần</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -140,6 +140,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                     </tbody>
                                     <!-- classPage -->
 
@@ -230,13 +231,13 @@
     <script src="https://kit.fontawesome.com/eca9d5c25e.js" crossorigin="anonymous"></script>
 
     <!----------- script Load ------------>
+    <!-- Base -->
+    <script src="../scripts/changeTarget.js"></script>
     <!-- Level 1 -->
     <script src="../scripts/Main.js"></script>
-    <script src="../scripts/changeTarget.js"></script>
     <script src="../scripts/loadTarget.js"></script>
     <!-- level 2 -->
     <script src="../scripts/SearchInfo.js"></script>
-    <script src="../scripts/submitForm.js"></script>
     <script src="../scripts/ControlerNav.js"></script>
     <script src="../scripts/RenderCatalog.js"></script>
 
@@ -244,12 +245,7 @@
 
 
     <!-- Hàm gọi đến khi load event -->
-    <script src="../scripts/popUp.js"></script>
-    <script src="../scripts/CheckInputClass.js"></script>
-    <script src="../scripts/CheckInputCourse.js"></script>
-    <script src="../scripts/CheckInputStudents.js"></script>
-    <script src="../scripts/DeleteFunc.js"></script>
-    <script src="../scripts/EditInforFunc.js"></script>
+    <script src="../scripts/UserAction.js"></script>
     <!--  -->
     <script src="../scripts/Sort.js"></script>
     <script src="../scripts/FormatFunc.js"></script>

@@ -1,7 +1,7 @@
 //***************************************************
 var targetOverride = '';
 // Khi sửa thông tin sinh viên
-function EditInfoStudent(catalogID) {
+function editInfoStudent(catalogID) {
     var studentList = JSON.parse(localStorage.getItem('studentList')) ? JSON.parse(localStorage.getItem('studentList')) : [];
     let selectedStatus = document.getElementById('selectStatus');
     let inputGlobalClass = document.querySelectorAll('[type="text"]');
@@ -52,7 +52,7 @@ function EditInfoStudent(catalogID) {
         console.log('Danh mục không tồn tại.');
     }
 }
-function EditInfoCourse(catalogID) {
+function editInfoCourse(catalogID) {
     var courseList = JSON.parse(localStorage.getItem('courseList')) ? JSON.parse(localStorage.getItem('courseList')) : [];
     let selectedStatus = document.getElementById('selectStatus');
     let inputGlobalClass = document.querySelectorAll('[type="text"]');
@@ -81,7 +81,7 @@ function EditInfoCourse(catalogID) {
         console.log('Danh mục không tồn tại.');
     }
 }
-function EditInfoClass(catalogID) {
+function editInfoClass(catalogID) {
     var classList = JSON.parse(localStorage.getItem('classList')) ? JSON.parse(localStorage.getItem('classList')) : [];
     let Descriptions = document.getElementById('descriptions');
     let Status = document.getElementById('selectStatus');

@@ -5,14 +5,17 @@ var textFix = document.querySelector('.B');
 var currentPage = 1;
 var catalogsPerPage = 10; // 10 đứa
 
-renderCatalogs(currentTargetList);
+// if (currentTarget === 'courseList')
+renderCatalogs();
 
-function renderCatalogs(targetList) {
+function renderCatalogs() {
+    loadEmptyOrList();
+    var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
     // target list truyền vào thì đã lấy dữ liệu từ local rồi 
     // TODO: cho hiển thị emptyPage
     var startIndex = (currentPage - 1) * catalogsPerPage;
     var endIndex = startIndex + catalogsPerPage;
-    var catalogs = targetList.slice(startIndex, endIndex);
+    var catalogs = currentTargetList.slice(startIndex, endIndex);
     var row = document.createElement('tr');
 
     // tbody
@@ -36,20 +39,22 @@ function renderCatalogs(targetList) {
                 row.innerHTML = patternTbodyStudents(catalog, index);
                 break;
             case "userSystems":
+                row.innerHTML = patternTbodyUser(catalog, index);
                 break;
         }
         tBody.appendChild(row);
     });
     //
-    renderPagination(targetList);
+    renderPagination();
 }
 
 // render pagination ***
-function renderPagination(targetList) {
+function renderPagination() {
+    var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
     var startIndex = (currentPage - 1) * catalogsPerPage;
     var endIndex = startIndex + catalogsPerPage;
-    var catalogs = targetList.slice(startIndex, endIndex);
-    var totalPages = Math.ceil(targetList.length / catalogsPerPage);
+    var catalogs = currentTargetList.slice(startIndex, endIndex);
+    var totalPages = Math.ceil(currentTargetList.length / catalogsPerPage);
     var pagination = document.querySelector('#pagination');
     pagination.innerHTML = '';
 
@@ -66,7 +71,7 @@ function renderPagination(targetList) {
     firstButton.addEventListener("click", function (event) {
         event.preventDefault();
         currentPage = 1;
-        renderCatalogs(targetList);
+        renderCatalogs();
     });
 
     pagination.appendChild(firstButton);
@@ -80,7 +85,7 @@ function renderPagination(targetList) {
         event.preventDefault();
         if (currentPage > 1) {
             currentPage--;
-            renderCatalogs(targetList);
+            renderCatalogs();
         }
 
     });
@@ -96,7 +101,7 @@ function renderPagination(targetList) {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             currentPage = parseInt(this.textContent);
-            renderCatalogs(targetList);
+            renderCatalogs();
         });
         pagination.appendChild(link);
     }
@@ -110,7 +115,7 @@ function renderPagination(targetList) {
         event.preventDefault();
         if (currentPage < totalPages && currentPage > 1) {
             currentPage++;
-            renderCatalogs(targetList);
+            renderCatalogs();
         }
 
     });
@@ -126,20 +131,22 @@ function renderPagination(targetList) {
     lastButton.addEventListener("click", function (event) {
         event.preventDefault();
         currentPage = totalPages;
-        renderCatalogs(targetList);
+        renderCatalogs();
     });
     pagination.appendChild(lastButton);
 
     // Ẩn nút "First" và "Prev" nếu là trang đầu
     if (currentPage === 1) {
-        firstButton.style.backgroundColor = 'rgb(196, 196, 196)';
-        prevButton.style.backgroundColor = 'rgb(196, 196, 196)';
+        // firstButton.style.display = 'none';
+        prevButton.style.display = 'none';
+        // prevButton.style.backgroundColor = 'rgb(196, 196, 196)';
     }
 
     // Ẩn nút "Next" và "Last" nếu là trang cuối
     if (currentPage === totalPages && currentPage > 1) {
-        nextButton.style.backgroundColor = 'rgb(196, 196, 196)';
-        lastButton.style.backgroundColor = 'rgb(196, 196, 196)';
+        // nextButton.style.backgroundColor = 'rgb(196, 196, 196)';
+        nextButton.style.display = 'none';
+        // lastButton.style.display = 'none';
     }
 }
 
