@@ -30,7 +30,6 @@ function submitForm(action) {
         switch (currentTarget) {
             case COURSE_TARGET:
                 inputGlobalClass.forEach(element => {
-                    debugger
                     if (checkInputCourse(element, 'checkEach') === false) { return }
                 });
                 if (func(selectedStatus) === false) {
@@ -44,7 +43,7 @@ function submitForm(action) {
                 var Descriptions = document.getElementById('descriptions');
                 var LecturerName = document.getElementById('LecturerName');
                 inputGlobalClass.forEach(element => {
-                    checkInputClass(element, 'checkEach');
+                    if (checkInputClass(element, 'checkEach') == false) { return }
                 })
                 classRoom.Lecturer = LecturerName.value;
                 classRoom.Status = selectedStatus.value;
@@ -66,7 +65,7 @@ function submitForm(action) {
 
                     if (element.id !== 'descriptions' || element.id !== 'gender') {
                         // check each để lấy dữ liệu
-                        checkInputStudent(element, 'checkEach');
+                        if (checkInputStudent(element, 'checkEach') == false) { return }
                     }
                 });
                 //
@@ -131,7 +130,7 @@ function submitForm(action) {
             funcR();
         }
         renderCatalogs();
-        // popOutForm();
+        popOutForm();
         //  làm các việc còn lại
 
 

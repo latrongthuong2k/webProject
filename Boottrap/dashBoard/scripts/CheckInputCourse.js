@@ -1,4 +1,3 @@
-var allowSubmit = false;
 
 function checkInputCourse(elementInput, action) {
     var currentTargetList = JSON.parse(localStorage.getItem(currentTarget)) ? JSON.parse(localStorage.getItem(currentTarget)) : [];
@@ -20,7 +19,7 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'ID course không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             var isExistingID = false;
             for (var i = 0; i < currentTargetList.length; i++) {
@@ -38,9 +37,8 @@ function checkInputCourse(elementInput, action) {
                 invalidFeedback.innerHTML = 'ID khoá học đã tồn tại, xin vui lòng nhập ID khác !';
                 invalidFeedback.style.display = 'block';
                 isValid = false;
-                allowSubmit = false;
+
             } else {
-                debugger
                 elementInput.style.backgroundColor = '';
                 elementInput.classList.add('is-valid');
                 elementInput.classList.remove('is-invalid');
@@ -51,7 +49,6 @@ function checkInputCourse(elementInput, action) {
                 course.CourseId = elementInput.value;
 
                 isValid = true;
-                allowSubmit = true;
             }
         }
     }
@@ -65,7 +62,7 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'Tên course không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             var isExistingName = false;
             for (var i = 0; i < currentTargetList.length; i++) {
@@ -83,7 +80,7 @@ function checkInputCourse(elementInput, action) {
                 invalidFeedback.innerHTML = 'Tên khoá học đã tồn tại, xin vui lòng đặt tên khác !';
                 invalidFeedback.style.display = 'block';
                 isValid = false;
-                allowSubmit = false;
+
             }
             else {
                 elementInput.style.backgroundColor = '';
@@ -96,7 +93,6 @@ function checkInputCourse(elementInput, action) {
                 course.CourseName = elementInput.value;
 
                 isValid = true;
-                allowSubmit = true;
             }
 
         }
@@ -111,7 +107,7 @@ function checkInputCourse(elementInput, action) {
             invalidFeedback.innerHTML = 'Thời gian không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -121,7 +117,6 @@ function checkInputCourse(elementInput, action) {
             course.CourseTime = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     // *** Action cho func

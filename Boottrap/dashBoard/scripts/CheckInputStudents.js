@@ -22,7 +22,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'ID không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             var isExistingID = false;
             for (var i = 0; i < currentTargetList.length; i++) {
@@ -40,7 +40,7 @@ function checkInputStudent(elementInput, action) {
                 invalidFeedback.innerHTML = 'ID đã tồn tại, xin vui lòng nhập ID khác !';
                 invalidFeedback.style.display = 'block';
                 isValid = false;
-                allowSubmit = false;
+
             }
             else {
                 elementInput.style.backgroundColor = '';
@@ -52,7 +52,6 @@ function checkInputStudent(elementInput, action) {
                 newInformationStudent.studentID = elementInput.value;
 
                 isValid = true;
-                allowSubmit = true;
             }
         }
     }
@@ -66,7 +65,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Tên học sinh không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -76,7 +75,6 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Name = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     //
@@ -89,7 +87,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Ngày sinh không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -100,7 +98,6 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Birthday = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     //
@@ -113,7 +110,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Lớp học không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -123,7 +120,6 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Class = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     //
@@ -136,7 +132,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Địa chỉ không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -146,7 +142,7 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Address = elementInput.value;
 
             isValid = true;
-            allowSubmit = false;
+
         }
     }
     //
@@ -160,7 +156,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Email không đúng !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -170,7 +166,6 @@ function checkInputStudent(elementInput, action) {
             newInformationStudent.Email = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     //
@@ -185,7 +180,7 @@ function checkInputStudent(elementInput, action) {
             invalidFeedback.innerHTML = 'Số điện thoại không đúng !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-            allowSubmit = false;
+
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -196,7 +191,6 @@ function checkInputStudent(elementInput, action) {
             formatNumber(elementInput);
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     // *** Action cho func

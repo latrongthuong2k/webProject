@@ -19,7 +19,6 @@ function checkInputClass(elementInput, action) {
             invalidFeedback.innerHTML = 'ID lớp không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-
         } else {
             var isExistingID = false;
             for (var i = 0; i < currentTargetList.length; i++) {
@@ -29,7 +28,6 @@ function checkInputClass(elementInput, action) {
                 }
             }
             if (isExistingID) {
-
                 elementInput.classList.remove('is-valid');
                 elementInput.classList.add('is-invalid');
                 elementInput.style.backgroundColor = bgColorWarning;
@@ -61,7 +59,6 @@ function checkInputClass(elementInput, action) {
             invalidFeedback.innerHTML = 'tên lớp không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-
         } else {
             var isExistingName = false;
             for (var i = 0; i < currentTargetList.length; i++) {
@@ -91,7 +88,6 @@ function checkInputClass(elementInput, action) {
                 classRoom.ClassName = elementInput.value;
 
                 isValid = true;
-                allowSubmit = true;
             }
 
         }
@@ -116,7 +112,6 @@ function checkInputClass(elementInput, action) {
             classRoom.TotalNumber = elementInput.value;
 
             isValid = true;
-            allowSubmit = true;
         }
     }
     if (elementInput.id === 'LecturerName') {
@@ -128,7 +123,6 @@ function checkInputClass(elementInput, action) {
             invalidFeedback.innerHTML = 'Tên giáo viên không được để trống !';
             invalidFeedback.style.display = 'block';
             isValid = false;
-
         } else {
             elementInput.classList.add('is-valid');
             elementInput.classList.remove('is-invalid');
@@ -137,9 +131,7 @@ function checkInputClass(elementInput, action) {
 
             // Ghi vào trong đối tượng classRoom
             classRoom.Lecturer = elementInput.value;
-
             isValid = true;
-            allowSubmit = true;
         }
     }
     // *** Action cho func

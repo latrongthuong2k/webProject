@@ -6,7 +6,7 @@ function renderCourseOptions() {
     const courseList = JSON.parse(localStorage.getItem(COURSE_TARGET));
     const selectCourse = document.getElementById('select-course');
     if (courseList != null)
-        return
+        return;
     // Xóa tất cả các option hiện có trong select
     selectCourse.innerHTML = '';
 

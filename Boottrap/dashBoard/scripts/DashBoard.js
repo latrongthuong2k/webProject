@@ -28,9 +28,17 @@ function upDateNumberData() {
         else if (student.Status == 'Tốt nghiệp')
             graduateTotal++;
     });
+    document.getElementById("studentTotal").textContent = studentTotalNum;
+    document.getElementById("studentWaiting").textContent = studentWaiting;
+    document.getElementById("activeStudent").textContent = studentStudying;
+    document.getElementById("inactiveStudent").textContent = studentBan;
+    document.getElementById("graduated").textContent = graduateTotal;
 
+    // courses
+    var courseTotal = document.getElementById("courseTotal");
+    courseTotal.textContent = courseTotalNum;
 
-    // 
+    // class
     var classTotalNum = classList.length;
     var activeClass = 0;
     var endedClass = 0;
@@ -46,29 +54,10 @@ function upDateNumberData() {
 
     });
 
-
-    var courseTotal = document.getElementById("courseTotal");
-    courseTotal.textContent = courseTotalNum;
-
-    var classTotal = document.getElementById("classTotal");
-    var activeClass = document.getElementById("activeClass");
-    var inactiveClass = document.getElementById("inactiveClass");
-    var NumberTotal = document.getElementById("NumberTotal");
-    classTotal.textContent = classTotalNum;
-
-
-
-
-
-
-    var studentTotal = document.getElementById("studentTotal");
-    var studentWaiting = document.getElementById("studentWaiting") = studentStudying;
-    var activeStudent = document.getElementById("activeStudent");
-    var inactiveStudent = document.getElementById("inactiveStudent");
-    var graduated = document.getElementById("graduated");
-    studentTotal.textContent = studentTotalNum;
-
-
+    document.getElementById("classTotal").textContent = classTotalNum;
+    document.getElementById("activeClass").textContent = activeClass;
+    document.getElementById("inactiveClass").textContent = endedClass;
+    document.getElementById("waitingClass").textContent = waitingClass;
 
 
 }
