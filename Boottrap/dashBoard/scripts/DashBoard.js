@@ -62,7 +62,7 @@ function upDateNumberData() {
 
 
     var studentTotal = document.getElementById("studentTotal");
-    var studentWaiting = document.getElementById("studentWaiting");
+    var studentWaiting = document.getElementById("studentWaiting") = studentStudying;
     var activeStudent = document.getElementById("activeStudent");
     var inactiveStudent = document.getElementById("inactiveStudent");
     var graduated = document.getElementById("graduated");
